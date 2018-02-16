@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PocketMine-MP</string>
+    <string name="server_management">Server management</string>
+    <string name="start_server">Start</string>
+    <string name="stop_server">Stop</string>
+    <string name="downloading">Downloading %name%…</string>
+    <string name="error_32bit">This application supports only 64 bit devices</string>
+    <string name="exit">Exit</string>
+    <string name="enter">Enter</string>
+    <string name="console">Console</string>
+    <string name="clear">Clear</string>
+    <string name="download_phar">Download last PocketMine-MP.phar</string>
+    <string name="kill">Kill server</string>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/send"
+        android:paddingBottom="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/label_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:singleLine="false"
+                android:textColor="#F7F7F7" />
+        </LinearLayout>
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/edit_command"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/scroll"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/scroll"
+        android:layout_toLeftOf="@+id/send"
+        android:layout_toStartOf="@+id/send"
+        android:ems="10"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/edit_command"
+        android:layout_alignBottom="@id/edit_command"
+        android:layout_alignEnd="@+id/scroll"
+        android:layout_alignRight="@+id/scroll"
+        android:text="@string/enter" />
+</RelativeLayout>

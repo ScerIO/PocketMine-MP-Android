@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/download"
+        android:icon="@drawable/download"
+        android:title="@string/download_phar"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/kill"
+        android:icon="@drawable/stop"
+        android:title="@string/kill"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/console"
+        android:icon="@drawable/console"
+        android:title="@string/console"
+        app:showAsAction="ifRoom" />
+</menu>
