@@ -44,11 +44,15 @@ public class ServerUtils {
         return new File(getAppDirectory(), "killall");
     }
 
+    public static File getSettingsFile() {
+        return new File(getDataDirectory(), "php.ini");
+    }
+
     public static void run() {
         if (!isInstalled()) {
             Toast.makeText(context, "Could not find file PocketMine-MP.phar!", Toast.LENGTH_LONG).show();
         }
-        ProcessBuilder builder = new ProcessBuilder(getPhp().toString(), getPhar().toString(), "--no-wizard");
+        ProcessBuilder builder = new ProcessBuilder(getPhp().toString(), "-c", getSettingsFile().toString(), getPhar().toString(), "--no-wizard");
         builder.redirectErrorStream(true);
         builder.directory(getDataDirectory());
         builder.environment().put("TMPDIR", getDataDirectory() + "/tmp");
@@ -90,6 +94,7 @@ public class ServerUtils {
 
     public static void sendCommand(String command) {
         try {
+            if (!isRunning()) return;
             ConsoleActivity.log("> " + command + "\n");
             stdin.write((command + "\n").getBytes());
             stdin.flush();

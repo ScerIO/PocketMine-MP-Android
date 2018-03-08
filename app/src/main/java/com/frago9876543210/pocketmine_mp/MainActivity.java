@@ -77,6 +77,17 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback,
 
     private void init() {
         new File(ServerUtils.getDataDirectory(), "tmp").mkdirs();
+        File ini = ServerUtils.getSettingsFile();
+        if (!ini.exists()) {
+            try {
+                ini.createNewFile();
+                FileOutputStream stream = new FileOutputStream(ini);
+                stream.write(("date.timezone=UTC\nshort_open_tag=0\nasp_tags=0\nphar.readonly=0\nphar.require_hash=1\nigbinary.compact_strings=0\nzend.assertions=-1\nerror_reporting=-1\ndisplay_errors=1\ndisplay_startup_errors=1\n").getBytes("UTF8"));
+                stream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         if (!ServerUtils.isInstalled()) {
             downloadPM();
         }
