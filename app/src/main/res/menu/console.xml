@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/clear"
-        android:icon="@drawable/content_clear"
+        android:icon="@drawable/ic_clear_all_black"
         app:showAsAction="always"
         android:title="@string/clear">
     </item>

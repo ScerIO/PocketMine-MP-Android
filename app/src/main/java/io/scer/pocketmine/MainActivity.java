@@ -1,22 +1,41 @@
-package com.frago9876543210.pocketmine_mp;
+package io.scer.pocketmine;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.*;
-import android.content.*;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.*;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
-import android.support.v4.app.*;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.*;
-import android.widget.*;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-import java.io.*;
-import java.net.*;
-import java.security.cert.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+import java.net.URLConnection;
+import java.security.cert.X509Certificate;
 
-import javax.net.ssl.*;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 @SuppressLint("StaticFieldLeak")
 @SuppressWarnings("ResultOfMethodCallIgnored")
@@ -126,11 +145,11 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback,
                     ssl.init(null, new TrustManager[]{
                             new X509TrustManager() {
                                 @Override
-                                public void checkClientTrusted(X509Certificate[] p1, String p2) throws CertificateException {
+                                public void checkClientTrusted(X509Certificate[] p1, String p2) {
                                 }
 
                                 @Override
-                                public void checkServerTrusted(X509Certificate[] p1, String p2) throws CertificateException {
+                                public void checkServerTrusted(X509Certificate[] p1, String p2) {
                                 }
 
                                 @Override

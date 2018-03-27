@@ -8,7 +8,8 @@
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/send"
+        android:layout_above="@+id/edit_command"
+        android:clipToPadding="false"
         android:paddingBottom="4dp">
 
         <LinearLayout
@@ -21,8 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
-                android:singleLine="false"
-                android:textColor="#F7F7F7" />
+                android:singleLine="false" />
         </LinearLayout>
     </ScrollView>
 
@@ -38,13 +38,15 @@
         android:ems="10"
         android:inputType="text" />
 
-    <Button
+    <ImageButton
         android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/edit_command"
-        android:layout_alignBottom="@id/edit_command"
         android:layout_alignEnd="@+id/scroll"
         android:layout_alignRight="@+id/scroll"
-        android:text="@string/enter" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/enter"
+        android:src="@drawable/ic_send_black" />
 </RelativeLayout>

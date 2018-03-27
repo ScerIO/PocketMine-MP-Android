@@ -1,17 +1,21 @@
-package com.frago9876543210.pocketmine_mp;
+package io.scer.pocketmine;
 
 import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.*;
-import android.view.*;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class ConsoleActivity extends AppCompatActivity implements Handler.Callback {
 
-    Button send;
+    ImageButton send;
     EditText edit_command;
     @SuppressLint("StaticFieldLeak")
     public static ConsoleActivity instance;

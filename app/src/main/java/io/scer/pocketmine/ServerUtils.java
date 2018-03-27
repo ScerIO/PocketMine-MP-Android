@@ -1,11 +1,15 @@
-package com.frago9876543210.pocketmine_mp;
+package io.scer.pocketmine;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Environment;
 import android.widget.Toast;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.nio.charset.Charset;
 
 @SuppressWarnings("WeakerAccess")

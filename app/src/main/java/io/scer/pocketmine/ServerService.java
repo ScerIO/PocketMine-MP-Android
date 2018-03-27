@@ -1,8 +1,9 @@
-package com.frago9876543210.pocketmine_mp;
+package io.scer.pocketmine;
 
-import android.os.*;
-import android.app.*;
-import android.content.*;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Intent;
+import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 
 public class ServerService extends Service {
