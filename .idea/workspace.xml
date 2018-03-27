@@ -10,28 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89d53f39-4ed7-4f74-8356-24c8e17e5b0d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_clear_all_black.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_console_black.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_file_download_black.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_send_black.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_stop_black.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/frago9876543210/pocketmine_mp/ConsoleActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/ConsoleActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/frago9876543210/pocketmine_mp/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/frago9876543210/pocketmine_mp/ServerService.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/ServerService.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/frago9876543210/pocketmine_mp/ServerUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/ServerUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/console.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/content_clear.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/download.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/stop.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_console.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_console.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/console.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/console.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/main.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -2097,7 +2081,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1928" />
     <option name="height" value="1040" />
   </component>
@@ -2417,7 +2401,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -2608,7 +2592,7 @@
         <state relative-caret-position="608">
           <caret line="47" column="38" lean-forward="false" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
           <folding>
-            <element signature="e#1800#1815#0" expanded="true" />
+            <element signature="e#1800#1815#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2618,7 +2602,7 @@
         <state relative-caret-position="391">
           <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
