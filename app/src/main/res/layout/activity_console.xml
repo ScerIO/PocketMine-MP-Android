@@ -8,7 +8,7 @@
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/edit_command"
+        android:layout_above="@+id/editCommand"
         android:clipToPadding="false"
         android:paddingBottom="4dp">
 
@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/label_log"
+                android:id="@+id/labelLog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
@@ -27,7 +27,7 @@
     </ScrollView>
 
     <EditText
-        android:id="@+id/edit_command"
+        android:id="@+id/editCommand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/scroll"
