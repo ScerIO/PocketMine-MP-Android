@@ -1,9 +1,7 @@
 package io.scer.pocketmine
 
-import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -11,7 +9,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.support.design.widget.Snackbar
-import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
@@ -22,9 +19,10 @@ import io.scer.pocketmine.server.ServerError
 import io.scer.pocketmine.server.ServerEventsHandler
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
+import java.util.*
+import android.widget.ProgressBar
 import java.net.URL
 import java.security.cert.X509Certificate
-import java.util.*
 import javax.net.ssl.HttpsURLConnection
 import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
@@ -48,7 +46,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             init()
         } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.INTERNET), 1)
+            //ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.INTERNET), 1)
         }
 
         try {
@@ -142,15 +140,20 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
         }
     }
 
+    @SuppressLint("TrustAllX509TrustManager", "InflateParams")
     private fun downloadFile(url: String, file: File) {
         if (file.exists()) file.delete()
-        val dialog = ProgressDialog(this)
-        dialog.setCancelable(false)
-        dialog.setMessage(getString(R.string.downloading).replace("%name%", file.name))
-        dialog.isIndeterminate = false
-        dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL)
-        dialog.setProgressNumberFormat(null)
+        val view = layoutInflater.inflate(R.layout.download, null)
+        val download = view.findViewById<ProgressBar>(R.id.downloadingProgress)
+
+        val builder = AlertDialog.Builder(this)
+        builder
+                .setTitle(getString(R.string.downloading).replace("%name%", file.name))
+                .setCancelable(false)
+                .setView(view)
+        val dialog = builder.create()
         dialog.show()
+
         Thread(Runnable {
             val output: OutputStream
             val input: InputStream
@@ -175,14 +178,14 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
                 output = FileOutputStream(file)
                 var read: Long = 0
                 val max = connection.contentLength.toLong()
-                runOnUiThread { dialog.max = max.toInt() / 1024 }
+                runOnUiThread { download.max = max.toInt() / 1024 }
                 val buffer = ByteArray(4096)
                 var count: Int = input.read(buffer)
                 while (count >= 0) {
                     output.write(buffer, 0, count)
                     read += count.toLong()
                     val temp = (read / 1000).toInt()
-                    runOnUiThread { dialog.progress = temp }
+                    runOnUiThread { download.progress = temp }
                     count = input.read(buffer)
                 }
                 output.close()
