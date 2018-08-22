@@ -11,4 +11,5 @@
     <string name="download_phar">Скачать последнюю сборку PocketMine-MP.phar</string>
     <string name="kill">Убить севрер</string>
     <string name="phar_does_not_exist">Не могу найти PocketMine-MP.phar!</string>
+    <string name="not_enough_rights">Чтобы приложение работало правильно, вам необходимо предоставить доступ к памяти вашего устройства!</string>
 </resources>

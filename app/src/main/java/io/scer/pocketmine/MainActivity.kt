@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
             1 -> if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 init()
             } else {
-                Toast.makeText(this, "To make the application work correctly, you need grant access to the memory of your device!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.not_enough_rights, Toast.LENGTH_LONG).show()
                 finish()
             }
         }
