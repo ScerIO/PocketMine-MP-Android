@@ -1,5 +1,6 @@
 package io.scer.pocketmine
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
@@ -9,6 +10,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.support.design.widget.Snackbar
+import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
@@ -46,7 +48,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             init()
         } else {
-            //ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.INTERNET), 1)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.INTERNET), 1)
         }
 
         try {
