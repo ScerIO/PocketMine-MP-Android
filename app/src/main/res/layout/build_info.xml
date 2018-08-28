@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="15dp"
-    android:paddingTop="15dp">
+    android:paddingTop="16dp"
+    android:paddingStart="26dp"
+    android:paddingEnd="26dp">
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -15,13 +15,13 @@
 
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:paddingLeft="10dp"
                 android:text="@string/api_version"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
@@ -34,13 +34,13 @@
 
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:paddingLeft="10dp"
                 android:text="@string/build_number"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
@@ -53,13 +53,13 @@
 
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:paddingLeft="10dp"
                 android:text="@string/branch"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
@@ -78,7 +78,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:paddingLeft="10dp"
                 android:text="@string/game_version"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
@@ -93,9 +92,8 @@
             android:id="@+id/development_build"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
             android:text="@string/development_build"
+            android:layout_marginTop="16dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@android:color/holo_red_light"
             android:visibility="gone" />

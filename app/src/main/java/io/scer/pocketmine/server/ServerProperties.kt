@@ -1,6 +1,5 @@
-package io.scer.pocketmine.utils
+package io.scer.pocketmine.server
 
-import io.scer.pocketmine.server.Server
 import java.lang.IndexOutOfBoundsException
 import java.lang.String.valueOf
 import java.text.SimpleDateFormat
@@ -10,23 +9,7 @@ class ServerProperties {
     private val config = LinkedHashMap<String, Any>()
 
     init {
-        read()
-    }
-
-    fun getMap(): LinkedHashMap<String, Any> {
-        return config
-    }
-
-    fun get(key: String): Any? {
-        return config[key]
-    }
-
-    fun set(key: String, value: Any) {
-        config[key] = value
-    }
-
-    private fun read() {
-        val content = Server.getInstance().files.serverSetting.inputStream().readBytes().toString(Charsets.UTF_8)
+        val content = Server.getInstance().files.serverSetting.readText(Charsets.UTF_8)
         for (line in content.split("\n".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()) {
             val property = line.split("=")
             try {
@@ -44,9 +27,17 @@ class ServerProperties {
         }
     }
 
+    fun getMap(): LinkedHashMap<String, Any> = config
+
+    fun get(key: String): Any? = config[key]
+
+    fun set(key: String, value: Any) {
+        config[key] = value
+    }
+
     fun write() {
         var content = "#Properties Config file\r\n#" + SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault()).format(Date()) + "\r\n"
-        for (entry in config) {
+        config.forEach { entry ->
             val key = entry.key
             var value: Any = entry.value
             if (value is Boolean) {

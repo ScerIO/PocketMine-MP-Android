@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
 
         instance = this
 
-        val arch = System.getProperty("os.arch")
+        val arch = System.getProperty("os.arch") ?: "7"
         if (!arch.contains("aarch64") && !arch.contains("8")) {
             AlertDialog.Builder(this).setMessage(getString(R.string.error_32bit)).setCancelable(false).setNegativeButton(getString(R.string.exit)) { _, _ -> finish() }.create().show()
         }
@@ -285,7 +285,6 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
     }
 
     companion object {
-
         var instance: MainActivity? = null
         private var service: Intent? = null
         var fontSize = 14F

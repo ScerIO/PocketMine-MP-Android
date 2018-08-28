@@ -9,7 +9,7 @@
     <string name="enter">Enter</string>
     <string name="console">Console</string>
     <string name="clear">Clear</string>
-    <string name="download_phar">Download last PocketMine-MP.phar build</string>
+    <string name="download_phar">Download PocketMine-MP</string>
     <string name="phar_does_not_exist">Could not find file PocketMine-MP.phar!</string>
     <string name="kill">Kill server</string>
     <string name="not_enough_rights">To make the application work correctly, you need grant access to the memory of your device!</string>

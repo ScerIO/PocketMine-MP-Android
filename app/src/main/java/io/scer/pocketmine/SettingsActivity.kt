@@ -6,13 +6,13 @@ import android.support.v7.app.AppCompatActivity
 import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.Switch
-import android.widget.TextView
-import io.scer.pocketmine.utils.ServerProperties
+import io.scer.pocketmine.server.ServerProperties
 import kotlinx.android.synthetic.main.activity_settings.*
 import android.text.Editable
 import android.text.InputType
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 
 class SettingsActivity : AppCompatActivity() {
