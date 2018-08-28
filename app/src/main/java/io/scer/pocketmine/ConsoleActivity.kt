@@ -33,7 +33,7 @@ class ConsoleActivity : AppCompatActivity() {
             false
         })
 
-        //labelLog.text = currentLog
+        labelLog.text = currentLog
     }
 
     private fun sendCommand() {
