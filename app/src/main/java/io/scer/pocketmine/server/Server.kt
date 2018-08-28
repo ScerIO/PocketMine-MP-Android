@@ -75,7 +75,7 @@ class Server(dataDir: String) {
         if (!isInstalled) {
             handlers.forEach { it.error(ServerError.PHAR_NOT_EXIST, null) }
         }
-        val builder = ProcessBuilder(files.php.toString(), "-c", files.settingsFile.toString(), files.phar.toString(), "--no-wizard", "--settings.enable-dev-builds=1")
+        val builder = ProcessBuilder(files.php.toString(), "-c", files.settingsFile.toString(), files.phar.toString(), "--no-wizard", "--settings.enable-dev-builds=1", "--enable-ansi", "--console.title-tick=0")
         builder.redirectErrorStream(true)
         builder.directory(files.dataDirectory)
         builder.environment()["TMPDIR"] = files.dataDirectory.toString() + "/tmp"
@@ -130,5 +130,8 @@ class Server(dataDir: String) {
 
         val settingsFile: File
             get() = File(dataDirectory, "php.ini")
+
+        val serverSetting: File
+            get() = File(dataDirectory, "server.properties")
     }
 }

@@ -22,7 +22,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="none"
-                android:singleLine="false" />
+                android:singleLine="false"
+                android:textIsSelectable="true" />
         </LinearLayout>
     </ScrollView>
 
@@ -43,8 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/scroll"
-        android:layout_alignRight="@+id/scroll"
         android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/scroll"
         android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/enter"

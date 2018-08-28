@@ -13,4 +13,19 @@
     <string name="phar_does_not_exist">Could not find file PocketMine-MP.phar!</string>
     <string name="kill">Kill server</string>
     <string name="not_enough_rights">To make the application work correctly, you need grant access to the memory of your device!</string>
+    <string name="settings">Settings</string>
+    <string name="settings_does_not_exist">Could not open server.properties</string>
+    <string name="assemblies_error">Failed to get assemblies of PocketMine-MP</string>
+    <string name="select_channel">Select channel</string>
+    <string name="build_info">Build Info</string>
+    <string name="api_version">API version</string>
+    <string name="build_number">Build number</string>
+    <string name="branch">Branch</string>
+    <string name="game_version">Game version</string>
+    <string name="download">Download</string>
+    <string name="development_build">It is development build and it may have bugs, crash, corrupt your data, or break your plugins</string>
+    <string name="server_settings">Server settings</string>
+    <string name="app_settings">App settings</string>
+    <string name="ansi_support">ANSI support</string>
+    <string name="font_size">Font size</string>
 </resources>

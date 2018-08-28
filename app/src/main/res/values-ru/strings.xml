@@ -12,4 +12,18 @@
     <string name="kill">Убить севрер</string>
     <string name="phar_does_not_exist">Не могу найти PocketMine-MP.phar!</string>
     <string name="not_enough_rights">Чтобы приложение работало правильно, вам необходимо предоставить доступ к памяти вашего устройства!</string>
+    <string name="settings">Настройки</string>
+    <string name="settings_does_not_exist">Не удалось открыть server.properties</string>
+    <string name="assemblies_error">Не удалось получить сборки PocketMine-MP</string>
+    <string name="select_channel">Выберите канал</string>
+    <string name="build_info">Информация о сборке</string>
+    <string name="api_version">Версия API</string>
+    <string name="build_number">Номер сборки</string>
+    <string name="branch">Ветка</string>
+    <string name="game_version">Версия игры</string>
+    <string name="download">Загрузить</string>
+    <string name="development_build">Это сборка находиться в стадии разработки и может содержать ошибки</string>
+    <string name="server_settings">Настройки сервера</string>
+    <string name="app_settings">Настройки приложения</string>
+    <string name="ansi_support">Поддержка ANSI</string>
 </resources>

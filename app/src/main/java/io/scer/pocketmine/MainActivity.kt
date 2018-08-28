@@ -15,14 +15,17 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import io.scer.pocketmine.server.Server
 import io.scer.pocketmine.server.ServerError
 import io.scer.pocketmine.server.ServerEventsHandler
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
 import java.util.*
-import android.widget.ProgressBar
+import io.scer.pocketmine.utils.AsyncRequest
+import org.json.JSONException
+import org.json.JSONObject
 import java.net.URL
 import java.security.cert.X509Certificate
 import javax.net.ssl.HttpsURLConnection
@@ -30,8 +33,10 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
-@SuppressLint("StaticFieldLeak")
+@SuppressLint("StaticFieldLeak", "InflateParams")
 class MainActivity : AppCompatActivity(), Handler.Callback {
+
+    private var assemblies: HashMap<String, JSONObject>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,9 +88,9 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
             Server.getInstance().sendCommand("stop")
         }
 
-        Server.getInstance().addEventListener(object: ServerEventsHandler {
+        Server.getInstance().addEventListener(object : ServerEventsHandler {
             override fun error(type: ServerError, message: String?) {
-                when(type) {
+                when (type) {
                     ServerError.PHAR_NOT_EXIST -> Snackbar.make(content, R.string.phar_does_not_exist, Snackbar.LENGTH_LONG).show()
                     ServerError.UNKNOWN -> Snackbar.make(content, "Error: $message", Snackbar.LENGTH_LONG).show()
                 }
@@ -113,6 +118,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
     }
 
     private fun init() {
+        assemblies = AsyncRequest().execute("development", "stable").get()
         File(Server.getInstance().files.dataDirectory, "tmp").mkdirs()
         val ini = Server.getInstance().files.settingsFile
         if (!ini.exists()) {
@@ -127,7 +133,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
 
         }
         if (!Server.getInstance().isInstalled) {
-            downloadPM()
+            downloadPMBuild("stable")
         }
     }
 
@@ -142,7 +148,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
         }
     }
 
-    @SuppressLint("TrustAllX509TrustManager", "InflateParams")
+    @SuppressLint("TrustAllX509TrustManager")
     private fun downloadFile(url: String, file: File) {
         if (file.exists()) file.delete()
         val view = layoutInflater.inflate(R.layout.download, null)
@@ -218,6 +224,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
             R.id.console -> startActivity(Intent(this, ConsoleActivity::class.java))
             R.id.download -> downloadPM()
             R.id.kill -> Server.getInstance().kill()
+            R.id.settings -> startActivity(Intent(this, SettingsActivity::class.java))
         }
         return super.onOptionsItemSelected(item)
     }
@@ -230,14 +237,58 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
     }
 
     private fun downloadPM() {
-        downloadFile("https://jenkins.pmmp.io/job/PocketMine-MP/lastSuccessfulBuild/artifact/PocketMine-MP.phar", Server.getInstance().files.phar)
+        if (assemblies == null) {
+            Snackbar.make(content, R.string.assemblies_error, Snackbar.LENGTH_LONG).show()
+            return
+        } else if (Server.getInstance().isRunning) {
+            Server.getInstance().kill()
+        }
+
+        val builds = assemblies!!.keys.toTypedArray()
+
+        AlertDialog.Builder(this)
+                .setTitle(R.string.select_channel)
+                .setItems(builds) { _, index ->
+                    val channel = builds[index]
+                    val json = assemblies!![channel]
+                    try {
+                        val view = layoutInflater.inflate(R.layout.build_info, null)
+
+                        if (json!!.getBoolean("is_dev")) {
+                            view.findViewById<TextView>(R.id.development_build).visibility = View.VISIBLE
+                        }
+
+                        view.findViewById<TextView>(R.id.api).text = json.getString("base_version")
+                        view.findViewById<TextView>(R.id.build_number).text = json.getString("build_number")
+                        view.findViewById<TextView>(R.id.branch).text = json.getString("branch")
+                        view.findViewById<TextView>(R.id.game_version).text = json.getString("mcpe_version")
+
+                        AlertDialog.Builder(this)
+                                .setTitle(R.string.build_info)
+                                .setView(view)
+                                .setPositiveButton(R.string.download) { _, _ ->
+                                    downloadPMBuild(channel)
+                                }
+                                .create().show()
+                    } catch (e: JSONException) {
+                        e.printStackTrace()
+                    }
+                }.create().show()
+    }
+
+    private fun downloadPMBuild(channel: String) {
+        try {
+            downloadFile(assemblies!![channel]!!.getString("download_url"), Server.getInstance().files.phar)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     companion object {
 
         var instance: MainActivity? = null
         private var service: Intent? = null
-        var fontSize = 14
+        var fontSize = 14F
 
         @Throws(IOException::class)
         private fun copyStream(inputStream: InputStream, outputStream: OutputStream) {
