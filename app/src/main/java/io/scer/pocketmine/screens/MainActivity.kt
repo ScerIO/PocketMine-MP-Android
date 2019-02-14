@@ -1,49 +1,46 @@
-package io.scer.pocketmine
+package io.scer.pocketmine.screens
 
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Build
-import android.os.Bundle
-import android.os.Handler
-import android.os.Message
-import android.support.design.widget.Snackbar
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
+import android.os.*
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.*
+import android.widget.ProgressBar
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.snackbar.Snackbar
+import io.scer.pocketmine.R
+import io.scer.pocketmine.screens.fragments.ConsoleFragment
+import io.scer.pocketmine.screens.fragments.ServerFragment
+import io.scer.pocketmine.screens.fragments.SettingsFragment
 import io.scer.pocketmine.server.Server
-import io.scer.pocketmine.server.ServerError
-import io.scer.pocketmine.server.ServerEventsHandler
-import kotlinx.android.synthetic.main.activity_main.*
-import java.io.*
-import java.util.*
 import io.scer.pocketmine.utils.AsyncRequest
+import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONException
 import org.json.JSONObject
+import java.io.*
 import java.net.URL
 import java.security.cert.X509Certificate
+import java.util.*
 import javax.net.ssl.HttpsURLConnection
 import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
-@SuppressLint("StaticFieldLeak", "InflateParams")
-class MainActivity : AppCompatActivity(), Handler.Callback {
-
+class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView.OnNavigationItemSelectedListener {
     private var assemblies: HashMap<String, JSONObject>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Server.makeInstance(applicationInfo.dataDir)
-
-        instance = this
+        navigation.setOnNavigationItemSelectedListener(this)
 
         val arch = System.getProperty("os.arch") ?: "7"
         if (!arch.contains("aarch64") && !arch.contains("8")) {
@@ -56,9 +53,20 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.INTERNET), 1)
         }
 
+        val appDirectoryPath = applicationInfo.dataDir
+        val externalDirectory = Environment.getExternalStorageDirectory().path + "/PocketMine-MP"
+        Server.makeInstance(Server.Files(
+                dataDirectory = File(Environment.getExternalStorageDirectory().path + "/PocketMine-MP"),
+                phar = File(externalDirectory, "PocketMine-MP.phar"),
+                appDirectory = File(externalDirectory),
+                php = File(appDirectoryPath, "php"),
+                killer = File(appDirectoryPath, "killall"),
+                settingsFile = File(externalDirectory, "php.ini"),
+                serverSetting = File(externalDirectory, "server.properties")
+        ))
+
         try {
-            val files = arrayOf("php", "killall")
-            for (path in files) {
+            for (path in arrayOf("php", "killall")) {
                 val file = File(Server.getInstance().files.appDirectory.toString() + "/" + path)
                 val lastModified = Date(
                         file.lastModified()
@@ -76,49 +84,12 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
             e.printStackTrace()
         }
 
-        val isStarted = Server.getInstance().isRunning
-        toggleButtons(isStarted)
-
-        start.setOnClickListener {
-            service = Intent(this, ServerService::class.java)
-            ContextCompat.startForegroundService(this, service!!)
-        }
-
-        stop.setOnClickListener {
-            Server.getInstance().sendCommand("stop")
-        }
-
-        Server.getInstance().addEventListener(object : ServerEventsHandler {
-            override fun error(type: ServerError, message: String?) {
-                when (type) {
-                    ServerError.PHAR_NOT_EXIST -> Snackbar.make(content, R.string.phar_does_not_exist, Snackbar.LENGTH_LONG).show()
-                    ServerError.UNKNOWN -> Snackbar.make(content, "Error: $message", Snackbar.LENGTH_LONG).show()
-                }
-                stopService(service)
-            }
-
-            override fun stop() {
-                runOnUiThread {
-                    toggleButtons(false)
-                }
-                stopService(service)
-            }
-
-            override fun start() {
-                runOnUiThread {
-                    toggleButtons(true)
-                }
-            }
-        })
-    }
-
-    fun toggleButtons(started: Boolean) {
-        start.isEnabled = !started
-        stop.isEnabled = started
+        if (savedInstanceState == null)
+            replaceFragment(ServerFragment.newInstance())
     }
 
     private fun init() {
-        assemblies = AsyncRequest().execute("development", "stable").get()
+        assemblies = AsyncRequest().execute("stable", "beta", "development").get()
         File(Server.getInstance().files.dataDirectory, "tmp").mkdirs()
         val ini = Server.getInstance().files.settingsFile
         if (!ini.exists()) {
@@ -130,11 +101,19 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
             } catch (e: IOException) {
                 e.printStackTrace()
             }
-
         }
-        if (!Server.getInstance().isInstalled) {
+        if (assemblies != null && !Server.getInstance().isInstalled) {
             downloadPMBuild("stable")
         }
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_server -> replaceFragment(ServerFragment.newInstance())
+            R.id.action_console -> replaceFragment(ConsoleFragment.newInstance())
+            R.id.action_settings -> replaceFragment(SettingsFragment.newInstance())
+        }
+        return true
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
@@ -146,6 +125,18 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
                 finish()
             }
         }
+    }
+
+    /**
+     * Replace fragment view
+     * @param fragment - Fragment view
+     */
+    private fun replaceFragment(fragment: Fragment): Boolean {
+        supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.content, fragment)
+                .commit()
+        return true
     }
 
     @SuppressLint("TrustAllX509TrustManager")
@@ -221,10 +212,8 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.console -> startActivity(Intent(this, ConsoleActivity::class.java))
             R.id.download -> downloadPM()
             R.id.kill -> Server.getInstance().kill()
-            R.id.settings -> startActivity(Intent(this, SettingsActivity::class.java))
         }
         return super.onOptionsItemSelected(item)
     }
@@ -232,7 +221,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
     @Throws(IOException::class)
     private fun copyAsset(path: String): File {
         val file = File(Server.getInstance().files.appDirectory.toString() + "/" + path)
-        copyStream(MainActivity.instance!!.applicationContext.assets.open(path), FileOutputStream(file))
+        applicationContext.assets.open(path).copyTo(FileOutputStream(file))
         return file
     }
 
@@ -280,25 +269,8 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
         try {
             downloadFile(assemblies!![channel]!!.getString("download_url"), Server.getInstance().files.phar)
         } catch (e: Exception) {
+            Snackbar.make(content, R.string.assemblies_error, Snackbar.LENGTH_LONG).show()
             e.printStackTrace()
-        }
-    }
-
-    companion object {
-        var instance: MainActivity? = null
-        private var service: Intent? = null
-        var fontSize = 14F
-
-        @Throws(IOException::class)
-        private fun copyStream(inputStream: InputStream, outputStream: OutputStream) {
-            val buffer = ByteArray(8192)
-            var cou: Int = inputStream.read(buffer)
-            while (cou != -1) {
-                outputStream.write(buffer, 0, cou)
-                cou = inputStream.read(buffer)
-            }
-            inputStream.close()
-            outputStream.close()
         }
     }
 }

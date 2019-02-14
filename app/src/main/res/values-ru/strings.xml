@@ -27,4 +27,7 @@
     <string name="app_settings">Настройки приложения</string>
     <string name="ansi_support">Поддержка ANSI</string>
     <string name="font_size">Размер шрифта</string>
+    <string name="server">Сервер</string>
+    <string name="console_cleaned">Консоль была очищена</string>
+    <string name="server_disabled">Сервер выключен</string>
 </resources>

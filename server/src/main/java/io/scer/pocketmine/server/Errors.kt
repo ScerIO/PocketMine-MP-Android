@@ -1,6 +1,6 @@
 package io.scer.pocketmine.server
 
-enum class ServerError {
+enum class Errors {
     PHAR_NOT_EXIST,
     UNKNOWN,
 }

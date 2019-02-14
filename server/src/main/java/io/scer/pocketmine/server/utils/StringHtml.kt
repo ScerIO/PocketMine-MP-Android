@@ -1,4 +1,4 @@
-package io.scer.pocketmine.utils
+package io.scer.pocketmine.server.utils
 
 import android.text.Html
 import android.os.Build
@@ -120,9 +120,8 @@ fun String.toHTML(): String {
 
 @Suppress("DEPRECATION")
 fun fromHtml(html: String): Spanned {
-    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
         Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY)
-    } else {
+    else
         Html.fromHtml(html)
-    }
 }

@@ -5,7 +5,7 @@ import java.lang.String.valueOf
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ServerProperties {
+class Properties {
     private val config = LinkedHashMap<String, Any>()
 
     init {

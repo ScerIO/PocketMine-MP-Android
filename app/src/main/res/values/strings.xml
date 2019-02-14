@@ -28,4 +28,7 @@
     <string name="app_settings">App settings</string>
     <string name="ansi_support">ANSI support</string>
     <string name="font_size">Font size</string>
+    <string name="server">Server</string>
+    <string name="console_cleaned">Console was cleaned</string>
+    <string name="server_disabled">Server disabled</string>
 </resources>

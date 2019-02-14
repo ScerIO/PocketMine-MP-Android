@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_server"
+        android:icon="@drawable/ic_cloud_black"
+        android:title="@string/server"/>
+    <item
+        android:id="@+id/action_console"
+        android:icon="@drawable/ic_console_black"
+        android:title="@string/console"/>
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings_black"
+        android:title="@string/settings"/>
+</menu>

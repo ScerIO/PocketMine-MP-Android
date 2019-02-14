@@ -10,15 +10,5 @@
         android:id="@+id/kill"
         android:icon="@drawable/ic_stop_black"
         android:title="@string/kill"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/console"
-        android:icon="@drawable/ic_console_black"
-        android:title="@string/console"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/settings"
-        android:icon="@drawable/ic_settings_black"
-        android:title="@string/settings"
         app:showAsAction="ifRoom" />
 </menu>
