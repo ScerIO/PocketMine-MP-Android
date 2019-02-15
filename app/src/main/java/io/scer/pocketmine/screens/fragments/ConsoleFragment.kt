@@ -28,6 +28,8 @@ class ConsoleFragment : Fragment() {
         labelLog = view.findViewById(R.id.labelLog)
         val send: ImageButton = view.findViewById(R.id.send)
         editCommand = view.findViewById(R.id.editCommand)
+        val commandRoot = view.findViewById<View>(R.id.command_root)
+        val serverDisabled = view.findViewById<View>(R.id.server_disabled)
 
         send.setOnClickListener {
             sendCommand()
@@ -42,7 +44,8 @@ class ConsoleFragment : Fragment() {
         })
 
         if (!Server.getInstance().isRunning) {
-            Snackbar.make(activity!!.findViewById(R.id.content), R.string.server_disabled, Snackbar.LENGTH_SHORT).show()
+            commandRoot.visibility = View.GONE
+            serverDisabled.visibility = View.VISIBLE
         }
 
         messageObserver = ServerBus.Log.listen.subscribe{

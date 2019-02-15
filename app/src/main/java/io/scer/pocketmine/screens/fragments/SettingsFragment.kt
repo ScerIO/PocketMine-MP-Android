@@ -13,7 +13,6 @@ import android.widget.Switch
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.google.android.material.snackbar.Snackbar
 import io.scer.pocketmine.R
 import io.scer.pocketmine.server.Properties
 
@@ -23,14 +22,16 @@ class SettingsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
-        val rootLayout: LinearLayout = view.findViewById(R.id.settingsRootLayout)
+        val content: LinearLayout = view.findViewById(R.id.content)
 
         try {
             properties = Properties()
-            visualize(rootLayout)
+            visualize(content)
         } catch (e: Exception) {
-            Snackbar.make(view, R.string.settings_does_not_exist, Snackbar.LENGTH_LONG).show()
+            val propertiesNotExist = view.findViewById<View>(R.id.properties_not_exist)
+            propertiesNotExist.visibility = View.VISIBLE
         }
+
         return view
     }
 
@@ -42,63 +43,67 @@ class SettingsFragment : Fragment() {
             val view = View(context)
             view.layoutParams = ViewGroup.LayoutParams(1, 50)
 
-            rootLayout.addView(view)
-
             when (value) {
-                is Boolean -> {
-                    val switch = Switch(context)
-                    switch.text = key
-                    switch.isChecked = value
-                    switch.textSize = 14F
-                    switch.setOnCheckedChangeListener { _, isChecked ->
-                        properties!!.set(key, isChecked)
-                    }
-
-                    rootLayout.addView(switch)
-                }
-                is String -> {
-                    val textView = TextView(context)
-                    textView.text = key
-                    textView.setTextColor(ContextCompat.getColor(context!!, R.color.colorAccent))
-
-                    rootLayout.addView(textView)
-
-                    val editText = EditText(context)
-                    editText.setText(value)
-                    editText.textSize = 14F
-                    editText.maxLines = 1
-
-                    if (value.toIntOrNull() != null) {
-                        editText.inputType = InputType.TYPE_CLASS_NUMBER
-                    } else {
-                        editText.inputType = InputType.TYPE_CLASS_TEXT
-                    }
-
-                    editText.addTextChangedListener(object : TextWatcher {
-                        override fun afterTextChanged(p0: Editable?) {
-                        }
-
-                        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                        }
-
-                        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                            val text = p0.toString()
-                            if (text.isEmpty()) {
-                                return
-                            }
-                            properties!!.set(key, text)
-                        }
-                    })
-
-                    rootLayout.addView(editText)
-                }
+                is Boolean -> rootLayout.addView(buildSwitch(key, value))
+                is String -> rootLayout.addView(buildEditText(key, value))
             }
+
+            rootLayout.addView(view)
         }
     }
 
+    private fun buildSwitch(key: String, value: Boolean): Switch {
+        val switch = Switch(context)
+        switch.text = key
+        switch.isChecked = value
+        switch.textSize = 14F
+        switch.setOnCheckedChangeListener { _, isChecked ->
+            properties!!.set(key, isChecked)
+        }
+        return switch
+    }
+
+    private fun buildEditText(key: String, value: String): LinearLayout {
+        val root = LinearLayout(context)
+        root.orientation = LinearLayout.VERTICAL
+
+        val textView = TextView(context)
+        textView.text = key
+        textView.setTextColor(ContextCompat.getColor(context!!, R.color.colorAccent))
+
+        root.addView(textView)
+
+        val editText = EditText(context)
+        editText.setText(value)
+        editText.textSize = 14F
+        editText.maxLines = 1
+
+        if (value.toIntOrNull() != null) {
+            editText.inputType = InputType.TYPE_CLASS_NUMBER
+        } else {
+            editText.inputType = InputType.TYPE_CLASS_TEXT
+        }
+
+        editText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(editable: Editable?) {}
+
+            override fun beforeTextChanged(charSequence: CharSequence?, start: Int, before: Int, after: Int) {}
+
+            override fun onTextChanged(charSequence: CharSequence?, start: Int, before: Int, after: Int) {
+                val text = charSequence.toString()
+                if (text.isEmpty()) return
+                properties!!.set(key, text)
+            }
+        })
+
+        root.addView(editText)
+
+        return root
+    }
+
     override fun onDestroy() {
-        super.onDestroy()
         properties?.write()
+        super.onDestroy()
     }
 
     companion object {

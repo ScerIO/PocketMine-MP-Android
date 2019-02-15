@@ -4,7 +4,7 @@
     <string name="start_server">Start</string>
     <string name="stop_server">Stop</string>
     <string name="downloading">Downloading %name%…</string>
-    <string name="error_32bit">Sorry PocketMine-MP supports only 64 bit devices</string>
+    <string name="error_32bit">App does not support x32 processor architecture, only x64! \n\n Please, read PocketMine-MP requirements about x32 support: https://pmmp.readthedocs.io/en/rtfd/installation/requirements.html \n\n This is not our decision, but the PMMP team, please treat with understanding and not lower the grade, we can’t do anything with it</string>
     <string name="exit">Exit</string>
     <string name="enter">Enter</string>
     <string name="console">Console</string>
@@ -30,5 +30,14 @@
     <string name="font_size">Font size</string>
     <string name="server">Server</string>
     <string name="console_cleaned">Console was cleaned</string>
-    <string name="server_disabled">Server disabled</string>
+    <string name="server_disabled">Server disabled. Start before to enter command!</string>
+    <string name="intro_1_title">Create</string>
+    <string name="app_intro_image_content_description" translatable="false">Image</string>
+    <string name="intro_1_description">Create a local server in a few clicks</string>
+    <string name="intro_2_title">Download</string>
+    <string name="intro_2_description">Always download the latest versions of PocketMine</string>
+    <string name="intro_3_title">Testing</string>
+    <string name="intro_3_description">Test your plugins</string>
+    <string name="local_ip">Local IP:</string>
+    <string name="beta_description">The app is in beta. If you want to help with the translation into another language or found a mistake - please, report them here (New issue button): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
 </resources>

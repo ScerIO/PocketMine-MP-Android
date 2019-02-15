@@ -34,32 +34,46 @@
         android:layout_alignParentBottom="true"
         card_view:cardElevation="8dp">
 
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/server_disabled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/server_disabled"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:textAlignment="center"/>
+
         <LinearLayout
+            android:id="@+id/command_root"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@color/colorPrimary"
-            android:padding="10dp">
+            android:gravity="center"
+            android:layout_gravity="center">
 
             <EditText
                 android:id="@+id/editCommand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@null"
                 android:hint="@string/console"
                 android:ems="10"
+                android:paddingStart="8dp"
+                android:paddingEnd="0dp"
                 android:inputType="text" />
 
-            <ImageButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/send"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:background="@android:color/transparent"
                 android:contentDescription="@string/enter"
-                android:src="@drawable/ic_send_black"/>
+                android:src="@drawable/ic_send_black"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="16dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

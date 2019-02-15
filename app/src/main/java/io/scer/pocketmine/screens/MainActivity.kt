@@ -42,15 +42,10 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
         setContentView(R.layout.activity_main)
         navigation.setOnNavigationItemSelectedListener(this)
 
-        val arch = System.getProperty("os.arch") ?: "7"
-        if (!arch.contains("aarch64") && !arch.contains("8")) {
-            AlertDialog.Builder(this).setMessage(getString(R.string.error_32bit)).setCancelable(false).setNegativeButton(getString(R.string.exit)) { _, _ -> finish() }.create().show()
-        }
-
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             init()
         } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.INTERNET), 1)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)
         }
 
         val appDirectoryPath = applicationInfo.dataDir
@@ -58,7 +53,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
         Server.makeInstance(Server.Files(
                 dataDirectory = File(Environment.getExternalStorageDirectory().path + "/PocketMine-MP"),
                 phar = File(externalDirectory, "PocketMine-MP.phar"),
-                appDirectory = File(externalDirectory),
+                appDirectory = File(appDirectoryPath),
                 php = File(appDirectoryPath, "php"),
                 killer = File(appDirectoryPath, "killall"),
                 settingsFile = File(externalDirectory, "php.ini"),
@@ -68,13 +63,6 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
         try {
             for (path in arrayOf("php", "killall")) {
                 val file = File(Server.getInstance().files.appDirectory.toString() + "/" + path)
-                val lastModified = Date(
-                        file.lastModified()
-                )
-                // 5 august 2018
-                if (lastModified.time < 1533452138000L) {
-                    file.delete()
-                }
                 if (!file.exists()) {
                     val targetFile = copyAsset(path)
                     targetFile.setExecutable(true, true)

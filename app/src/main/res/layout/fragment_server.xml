@@ -7,17 +7,9 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/server_management"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dip"
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
@@ -41,4 +33,42 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/ip_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/local_ip"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/ip_label"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="Приложение находится в стадии бета-сборки. Если ты желаешь помочь с переводом на другой язык или нашел ошибку - прошу, сообщи о них сюда (кнопка New issue): \n\n https://github.com/ScerIO/PocketMine-MP-Android/issues"/>
+
+    </LinearLayout>
+
 </LinearLayout>
