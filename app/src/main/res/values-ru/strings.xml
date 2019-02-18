@@ -1,5 +1,4 @@
 <resources>
-    <string name="server_management">Управление сервером</string>
     <string name="start_server">Старт</string>
     <string name="stop_server">Стоп</string>
     <string name="downloading">Загрузка %name%…</string>
@@ -38,4 +37,6 @@
     <string name="intro_3_description">Тестируй свои плагины</string>
     <string name="local_ip">Локальный IP:</string>
     <string name="beta_description">Приложение находится в стадии бета-сборки. Если ты желаешь помочь с переводом на другой язык или нашел ошибку - прошу, сообщи о них сюда (кнопка New issue): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
+    <string name="server_started">Сервер запущен</string>
+    <string name="server_stopped">Сервер остановлен</string>
 </resources>

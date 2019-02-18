@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name" translatable="false">PocketMine-MP</string>
-    <string name="server_management">Server management</string>
     <string name="start_server">Start</string>
     <string name="stop_server">Stop</string>
     <string name="downloading">Downloading %name%…</string>
@@ -40,4 +39,6 @@
     <string name="intro_3_description">Test your plugins</string>
     <string name="local_ip">Local IP:</string>
     <string name="beta_description">The app is in beta. If you want to help with the translation into another language or found a mistake - please, report them here (New issue button): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
+    <string name="server_started">Server started</string>
+    <string name="server_stopped">Server stoped</string>
 </resources>

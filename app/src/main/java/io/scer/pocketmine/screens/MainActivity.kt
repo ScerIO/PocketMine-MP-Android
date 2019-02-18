@@ -209,7 +209,11 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
     @Throws(IOException::class)
     private fun copyAsset(path: String): File {
         val file = File(Server.getInstance().files.appDirectory.toString() + "/" + path)
-        applicationContext.assets.open(path).copyTo(FileOutputStream(file))
+        val input = applicationContext.assets.open(path)
+        val output = FileOutputStream(file)
+        input.copyTo(output)
+        input.close()
+        output.close()
         return file
     }
 

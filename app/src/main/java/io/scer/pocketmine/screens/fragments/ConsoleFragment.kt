@@ -54,6 +54,8 @@ class ConsoleFragment : Fragment() {
             activity!!.runOnUiThread {
                 labelLog.text = it
                 Timer().schedule(100) {
+                    if (activity == null) return@schedule
+
                     activity!!.runOnUiThread {
                         scroll.fullScroll(ScrollView.FOCUS_DOWN)
                     }

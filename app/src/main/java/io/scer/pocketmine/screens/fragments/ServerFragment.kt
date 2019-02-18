@@ -1,7 +1,10 @@
 package io.scer.pocketmine.screens.fragments
 
+import android.content.Context.WIFI_SERVICE
 import android.content.Intent
+import android.net.wifi.WifiManager
 import android.os.Bundle
+import android.text.format.Formatter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +13,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
+import io.scer.pocketmine.R
 import io.scer.pocketmine.ServerService
 import io.scer.pocketmine.server.*
-import android.content.Context.WIFI_SERVICE
-import android.net.wifi.WifiManager
-import android.text.format.Formatter
-import android.util.Log
-import io.scer.pocketmine.R
 
 
 class ServerFragment : Fragment() {
@@ -61,21 +60,27 @@ class ServerFragment : Fragment() {
     }
 
     private val startObserver = ServerBus.listen(StartEvent::class.java).subscribe {
+        if (activity == null) return@subscribe
+
         activity!!.runOnUiThread {
             toggleButtons(true)
-            Snackbar.make(view!!, "Started", Snackbar.LENGTH_LONG).show()
+            Snackbar.make(view!!, R.string.server_started, Snackbar.LENGTH_LONG).show()
         }
     }
 
     private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe {
+        if (activity == null) return@subscribe
+
         activity!!.runOnUiThread {
             toggleButtons(false)
-            Snackbar.make(view!!, "Exited", Snackbar.LENGTH_LONG).show()
+            Snackbar.make(view!!, R.string.server_stopped, Snackbar.LENGTH_LONG).show()
         }
         if (service != null) requireActivity().stopService(service)
     }
 
     private val errorObserver = ServerBus.listen(ErrorEvent::class.java).subscribe {
+        if (activity == null) return@subscribe
+
         when (it.type) {
             Errors.PHAR_NOT_EXIST -> Snackbar.make(view!!, R.string.phar_does_not_exist, Snackbar.LENGTH_LONG).show()
             Errors.UNKNOWN -> Snackbar.make(view!!, "Error: $it.message", Snackbar.LENGTH_LONG).show()
@@ -83,7 +88,7 @@ class ServerFragment : Fragment() {
         activity!!.runOnUiThread {
             toggleButtons(false)
         }
-        if (service != null) requireActivity().stopService(service)
+        if (service != null) activity!!.stopService(service)
     }
 
     private fun toggleButtons(started: Boolean) {
