@@ -5,7 +5,7 @@ import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
 import androidx.core.app.NotificationCompat
-import io.scer.pocketmine.screens.MainActivity
+import io.scer.pocketmine.screens.home.MainActivity
 import io.scer.pocketmine.server.Server
 import io.scer.pocketmine.server.ServerBus
 import io.scer.pocketmine.server.StopEvent

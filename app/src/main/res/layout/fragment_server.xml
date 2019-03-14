@@ -67,8 +67,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autoLink="web"
-            android:text="Приложение находится в стадии бета-сборки. Если ты желаешь помочь с переводом на другой язык или нашел ошибку - прошу, сообщи о них сюда (кнопка New issue): \n\n https://github.com/ScerIO/PocketMine-MP-Android/issues"/>
-
+            android:textAlignment="center"
+            android:text="@string/beta_description"/>
     </LinearLayout>
 
 </LinearLayout>

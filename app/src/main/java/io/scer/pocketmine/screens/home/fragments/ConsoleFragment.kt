@@ -1,11 +1,8 @@
-package io.scer.pocketmine.screens.fragments
+package io.scer.pocketmine.screens.home.fragments
 
 import android.os.Bundle
 import android.view.*
-import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.ScrollView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import io.reactivex.disposables.Disposable
@@ -13,26 +10,14 @@ import io.scer.pocketmine.R
 import io.scer.pocketmine.server.Server
 import io.scer.pocketmine.server.ServerBus
 import io.scer.pocketmine.server.StopEvent
+import kotlinx.android.synthetic.main.fragment_console.*
 import java.util.*
 import kotlin.concurrent.schedule
 
 class ConsoleFragment : Fragment() {
-    private lateinit var editCommand: EditText
-    private lateinit var labelLog: TextView
-    private lateinit var scroll: ScrollView
-    private lateinit var commandRoot: View
-    private lateinit var serverDisabled: View
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_console, container, false)
         setHasOptionsMenu(true)
-
-        scroll = view.findViewById(R.id.scroll)
-        labelLog = view.findViewById(R.id.labelLog)
-        val send: ImageButton = view.findViewById(R.id.send)
-        editCommand = view.findViewById(R.id.editCommand)
-        commandRoot = view.findViewById<View>(R.id.command_root)
-        serverDisabled = view.findViewById<View>(R.id.server_disabled)
 
         send.setOnClickListener {
             sendCommand()
@@ -67,8 +52,8 @@ class ConsoleFragment : Fragment() {
     }
 
     private fun toggleCommandLine(enable: Boolean) {
-        commandRoot.visibility = if (enable) View.VISIBLE else View.GONE
-        serverDisabled.visibility = if (enable) View.GONE else View.VISIBLE
+        command_root.visibility = if (enable) View.VISIBLE else View.GONE
+        command_root.visibility = if (enable) View.GONE else View.VISIBLE
     }
 
     private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe {
@@ -105,9 +90,5 @@ class ConsoleFragment : Fragment() {
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    companion object {
-        fun newInstance() = ConsoleFragment()
     }
 }

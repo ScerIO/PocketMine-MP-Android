@@ -30,13 +30,13 @@
     <string name="console_cleaned">Консоль очищена</string>
     <string name="server_disabled">Сервер отключен. Начните для ввода команды!</string>
     <string name="intro_1_title">Создавай</string>
-    <string name="intro_1_description">Создай локальный сервер в несколько нажатий</string>
     <string name="intro_2_title">Загружай</string>
-    <string name="intro_2_description">Загружай всегда последние версии PocketMine</string>
+    <string name="intro_2_description">Загружай всегда последние версии ядра от команды PMMP. Не устраивает? Помести файл PocketMine-MP.phar в соответсвующую папку на карте памяти и пользуйся ядром сторонних разработчиков!</string>
     <string name="intro_3_title">Тестируй</string>
     <string name="intro_3_description">Тестируй свои плагины</string>
     <string name="local_ip">Локальный IP:</string>
-    <string name="beta_description">Приложение находится в стадии бета-сборки. Если ты желаешь помочь с переводом на другой язык или нашел ошибку - прошу, сообщи о них сюда (кнопка New issue): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
+    <string name="beta_description">Приложение находится в стадии бета-сборки. Если ты желаешь помочь с переводом на другой язык или нашел ошибку - прошу, сообщи о них сюда (кнопка New issue):    https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
     <string name="server_started">Сервер запущен</string>
     <string name="server_stopped">Сервер остановлен</string>
+    <string name="intro_1_description">Запускай PocketMine-MP сервер прямо на своем Android устройстве! Проверяй самописные плагины. Играй с друзьями, находящимися в близи. Не ограничивай себя ни в чем и дай волю фантазии.</string>
 </resources>

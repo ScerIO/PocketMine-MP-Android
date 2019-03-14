@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="console_log_min_height">48dp</dimen>
+    <dimen name="settings_spacing">16dp</dimen>
+    <dimen name="settings_entity_height">48dp</dimen>
+</resources>

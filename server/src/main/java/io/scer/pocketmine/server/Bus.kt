@@ -11,6 +11,7 @@ class StartEvent
 class StopEvent
 data class ErrorEvent(val message: String?,
                       val type: Errors)
+data class UpdateStatEvent(val state: Map<String, String>)
 
 object ServerBus {
     private val publisher = PublishSubject.create<Any>()

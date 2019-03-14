@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import io.scer.pocketmine.R
 import kotlinx.android.synthetic.main.activity_launcher.*
 import android.content.Intent
+import io.scer.pocketmine.screens.home.MainActivity
 
 class LauncherActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

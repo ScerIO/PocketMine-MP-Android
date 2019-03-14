@@ -1,4 +1,4 @@
-package io.scer.pocketmine.screens
+package io.scer.pocketmine.screens.home
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -8,39 +8,36 @@ import android.os.*
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.snackbar.Snackbar
 import io.scer.pocketmine.R
-import io.scer.pocketmine.screens.fragments.ConsoleFragment
-import io.scer.pocketmine.screens.fragments.ServerFragment
-import io.scer.pocketmine.screens.fragments.SettingsFragment
 import io.scer.pocketmine.server.Server
 import io.scer.pocketmine.utils.AsyncRequest
+import io.scer.pocketmine.utils.saveTo
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONException
 import org.json.JSONObject
-import java.io.*
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 import java.net.URL
-import java.security.cert.X509Certificate
 import java.util.*
-import javax.net.ssl.HttpsURLConnection
-import javax.net.ssl.SSLContext
-import javax.net.ssl.TrustManager
-import javax.net.ssl.X509TrustManager
 
-class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), Handler.Callback {
     private var assemblies: HashMap<String, JSONObject>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        navigation.setOnNavigationItemSelectedListener(this)
+        val host: NavHostFragment = fragment as NavHostFragment
+
+        val navController = host.navController
+        navigation.setupWithNavController(navController)
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             init()
@@ -71,9 +68,6 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
         } catch (e: Exception) {
             e.printStackTrace()
         }
-
-        if (savedInstanceState == null)
-            replaceFragment(ServerFragment.newInstance())
     }
 
     private fun init() {
@@ -83,9 +77,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
         if (!ini.exists()) {
             try {
                 ini.createNewFile()
-                val stream = FileOutputStream(ini)
-                stream.write("date.timezone=UTC\nshort_open_tag=0\nasp_tags=0\nphar.readonly=0\nphar.require_hash=1\nigbinary.compact_strings=0\nzend.assertions=-1\nerror_reporting=-1\ndisplay_errors=1\ndisplay_startup_errors=1\n".toByteArray(charset("UTF8")))
-                stream.close()
+                ini.writeText("date.timezone=UTC\nshort_open_tag=0\nasp_tags=0\nphar.readonly=0\nphar.require_hash=1\nigbinary.compact_strings=0\nzend.assertions=-1\nerror_reporting=-1\ndisplay_errors=1\ndisplay_startup_errors=1\n")
             } catch (e: IOException) {
                 e.printStackTrace()
             }
@@ -93,15 +85,6 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
         if (assemblies != null && !Server.getInstance().isInstalled) {
             downloadPMBuild("stable")
         }
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_server -> replaceFragment(ServerFragment.newInstance())
-            R.id.action_console -> replaceFragment(ConsoleFragment.newInstance())
-            R.id.action_settings -> replaceFragment(SettingsFragment.newInstance())
-        }
-        return true
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
@@ -115,23 +98,10 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
         }
     }
 
-    /**
-     * Replace fragment view
-     * @param fragment - Fragment view
-     */
-    private fun replaceFragment(fragment: Fragment): Boolean {
-        supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.content, fragment)
-                .commit()
-        return true
-    }
-
     @SuppressLint("TrustAllX509TrustManager")
     private fun downloadFile(url: String, file: File) {
         if (file.exists()) file.delete()
-        val view = layoutInflater.inflate(R.layout.download, null)
-        val download = view.findViewById<ProgressBar>(R.id.downloadingProgress)
+        val view = View.inflate(this, R.layout.download,null)
 
         val builder = AlertDialog.Builder(this)
         builder
@@ -142,45 +112,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
         dialog.show()
 
         Thread(Runnable {
-            val output: OutputStream
-            val input: InputStream
-            try {
-                if (file.exists()) file.delete()
-                val ssl = SSLContext.getInstance("SSL")
-                ssl.init(null, arrayOf<TrustManager>(object : X509TrustManager {
-                    override fun checkClientTrusted(p1: Array<X509Certificate>, p2: String) {}
-
-                    override fun checkServerTrusted(p1: Array<X509Certificate>, p2: String) {}
-
-                    override fun getAcceptedIssuers(): Array<X509Certificate>? {
-                        return null
-                    }
-                }), java.security.SecureRandom())
-                HttpsURLConnection.setDefaultSSLSocketFactory(ssl.socketFactory)
-                HttpsURLConnection.setDefaultHostnameVerifier { _, _ -> true }
-                val req = URL(url)
-                val connection = req.openConnection()
-                connection.connect()
-                input = BufferedInputStream(connection.getInputStream())
-                output = FileOutputStream(file)
-                var read: Long = 0
-                val max = connection.contentLength.toLong()
-                runOnUiThread { download.max = max.toInt() / 1024 }
-                val buffer = ByteArray(4096)
-                var count: Int = input.read(buffer)
-                while (count >= 0) {
-                    output.write(buffer, 0, count)
-                    read += count.toLong()
-                    val temp = (read / 1000).toInt()
-                    runOnUiThread { download.progress = temp }
-                    count = input.read(buffer)
-                }
-                output.close()
-                input.close()
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-
+            URL(url).saveTo(file)
             runOnUiThread {
                 if (dialog.isShowing) {
                     dialog.dismiss()
@@ -233,7 +165,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
                     val channel = builds[index]
                     val json = assemblies!![channel]
                     try {
-                        val view = layoutInflater.inflate(R.layout.build_info, null)
+                        val view = View.inflate(this, R.layout.build_info,null)
 
                         if (json!!.getBoolean("is_dev")) {
                             view.findViewById<TextView>(R.id.development_build).visibility = View.VISIBLE
@@ -250,7 +182,8 @@ class MainActivity : AppCompatActivity(), Handler.Callback, BottomNavigationView
                                 .setPositiveButton(R.string.download) { _, _ ->
                                     downloadPMBuild(channel)
                                 }
-                                .create().show()
+                                .create()
+                                .show()
                     } catch (e: JSONException) {
                         e.printStackTrace()
                     }

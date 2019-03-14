@@ -3,6 +3,8 @@ package io.scer.pocketmine.server
 import java.io.*
 import java.nio.charset.Charset
 
+val availableStats = listOf("PocketMine-MP", "Online", "Memory", "U", "TPS", "Load")
+
 class Server(val files: Files) {
     private var process: Process? = null
     private var stdin: OutputStream? = null
@@ -29,7 +31,7 @@ class Server(val files: Files) {
         try {
             if (!isRunning) return
             ServerBus.Log.message("> $command\n")
-            stdin!!.write((command + "\n").toByteArray())
+            stdin!!.write((command + "\r\n").toByteArray())
             stdin!!.flush()
         } catch (ignored: Exception) {}
     }
@@ -67,7 +69,7 @@ class Server(val files: Files) {
                 "--no-wizard",
                 "--settings.enable-dev-builds=1",
                 "--enable-ansi",
-                "--console.title-tick=0"
+                "--console.title-tick=1"
         )
         builder.redirectErrorStream(true)
         builder.directory(files.dataDirectory)
@@ -82,11 +84,28 @@ class Server(val files: Files) {
                     ServerBus.publish(StartEvent())
                     while (isRunning) {
                         try {
-                            var line = reader.readLine()
-                            while (line != null) {
-                                ServerBus.Log.message(line + "\n")
-                                line = reader.readLine()
-                            }
+                            val buffer = CharArray(8192)
+                            var size: Int
+                            do {
+                                size = reader.read(buffer, 0, buffer.size)
+                                var stringBuilder = StringBuilder()
+                                for (i in 0 until size) {
+                                    val character = buffer[i]
+                                    if (character == '\r') { }
+                                    else if (character == '\n' || character == '\u0007') {
+                                        val line = stringBuilder.toString()
+                                        if (character == '\u0007' && line.startsWith("\u001B]0;")) {
+                                            val statsArray = line.substring(4).split(" | ")
+                                            ServerBus.publish(UpdateStatEvent(associateStats(statsArray)))
+                                        } else {
+                                            ServerBus.Log.message(line + "\n")
+                                        }
+                                        stringBuilder = StringBuilder()
+                                    } else {
+                                        stringBuilder.append(buffer[i])
+                                    }
+                                }
+                            } while (size != -1)
                         } catch (e: Exception) {
                             e.printStackTrace()
                             ServerBus.publish(ErrorEvent(e.message.toString(), Errors.UNKNOWN))
@@ -100,6 +119,24 @@ class Server(val files: Files) {
             ServerBus.publish(ErrorEvent(e.message.toString(), Errors.UNKNOWN))
             kill()
         }
+    }
+
+    fun associateStats(stats: List<String>): HashMap<String, String> {
+        val result = HashMap<String, String>()
+
+        fun removeNameFromStat(fullStat: String, name: String): String {
+            return fullStat.substring(fullStat.indexOf(name) + name.length)
+        }
+
+        stats.forEach { fullStat ->
+            availableStats.forEach { statName ->
+                if (fullStat.contains("$statName ")) {
+                    result[statName] = removeNameFromStat(fullStat, "$statName ")
+                }
+            }
+        }
+
+        return result
     }
 
     class Files(

@@ -7,10 +7,8 @@
     android:padding="26dp">
 
     <ProgressBar
-        android:id="@+id/downloadingProgress"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="100"
-        android:progress="0" />
+        android:indeterminate="true"/>
 </RelativeLayout>

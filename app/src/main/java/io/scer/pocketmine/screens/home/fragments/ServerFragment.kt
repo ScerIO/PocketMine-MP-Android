@@ -1,4 +1,4 @@
-package io.scer.pocketmine.screens.fragments
+package io.scer.pocketmine.screens.home.fragments
 
 import android.content.Context.WIFI_SERVICE
 import android.content.Intent
@@ -8,26 +8,18 @@ import android.text.format.Formatter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 import io.scer.pocketmine.R
 import io.scer.pocketmine.ServerService
 import io.scer.pocketmine.server.*
+import kotlinx.android.synthetic.main.fragment_server.*
 
 
 class ServerFragment : Fragment() {
-    private lateinit var start: MaterialButton
-    private lateinit var stop: MaterialButton
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_server, container, false)
-
-        start = view.findViewById(R.id.start)
-        stop = view.findViewById(R.id.stop)
-        val ip = view.findViewById<TextView>(io.scer.pocketmine.R.id.ip)
 
         val isStarted = Server.getInstance().isRunning
         toggleButtons(isStarted)
@@ -46,17 +38,11 @@ class ServerFragment : Fragment() {
         return view
     }
 
+    @Suppress("DEPRECATION")
     private fun getIpAddress(): String {
         val wifiManager = context!!.getSystemService(WIFI_SERVICE) as WifiManager
         val ip = wifiManager.connectionInfo.ipAddress
         return if (ip == 0) "127.0.0.1" else Formatter.formatIpAddress(ip)
-    }
-
-    override fun onDestroyView() {
-        startObserver.dispose()
-        stopObserver.dispose()
-        errorObserver.dispose()
-        super.onDestroyView()
     }
 
     private val startObserver = ServerBus.listen(StartEvent::class.java).subscribe {
@@ -89,13 +75,24 @@ class ServerFragment : Fragment() {
         if (service != null) activity!!.stopService(service)
     }
 
+    private val statUpdateObserver = ServerBus.listen(UpdateStatEvent::class.java).subscribe {
+        println(it)
+    }
+
     private fun toggleButtons(started: Boolean) {
         start.isEnabled = !started
         stop.isEnabled = started
     }
 
+    override fun onDestroyView() {
+        startObserver.dispose()
+        stopObserver.dispose()
+        errorObserver.dispose()
+        statUpdateObserver.dispose()
+        super.onDestroyView()
+    }
+
     companion object {
-        fun newInstance() = ServerFragment()
         private var service: Intent? = null
     }
 }

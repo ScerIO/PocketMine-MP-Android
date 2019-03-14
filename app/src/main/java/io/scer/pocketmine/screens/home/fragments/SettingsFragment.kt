@@ -1,4 +1,4 @@
-package io.scer.pocketmine.screens.fragments
+package io.scer.pocketmine.screens.home.fragments
 
 import android.os.Bundle
 import android.text.Editable
@@ -41,7 +41,7 @@ class SettingsFragment : Fragment() {
             val value: Any = entry.value
 
             val view = View(context)
-            view.layoutParams = ViewGroup.LayoutParams(1, 50)
+            view.layoutParams = ViewGroup.LayoutParams(1, resources.getDimension(R.dimen.settings_spacing).toInt())
 
             when (value) {
                 is Boolean -> rootLayout.addView(buildSwitch(key, value))
@@ -54,12 +54,15 @@ class SettingsFragment : Fragment() {
 
     private fun buildSwitch(key: String, value: Boolean): Switch {
         val switch = Switch(context)
+        switch.height = resources.getDimension(R.dimen.settings_entity_height).toInt()
+        switch.setTextColor(ContextCompat.getColor(context!!, R.color.secondaryColor))
         switch.text = key
         switch.isChecked = value
         switch.textSize = 14F
         switch.setOnCheckedChangeListener { _, isChecked ->
             properties!!.set(key, isChecked)
         }
+
         return switch
     }
 
@@ -68,12 +71,13 @@ class SettingsFragment : Fragment() {
         root.orientation = LinearLayout.VERTICAL
 
         val textView = TextView(context)
+        textView.setTextColor(ContextCompat.getColor(context!!, R.color.secondaryColor))
         textView.text = key
-        textView.setTextColor(ContextCompat.getColor(context!!, R.color.colorAccent))
 
         root.addView(textView)
 
         val editText = EditText(context)
+        editText.height = resources.getDimension(R.dimen.settings_entity_height).toInt()
         editText.setText(value)
         editText.textSize = 14F
         editText.maxLines = 1
@@ -104,9 +108,5 @@ class SettingsFragment : Fragment() {
     override fun onDestroy() {
         properties?.write()
         super.onDestroy()
-    }
-
-    companion object {
-        fun newInstance() = SettingsFragment()
     }
 }

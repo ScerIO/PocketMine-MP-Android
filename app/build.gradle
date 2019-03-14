@@ -8,7 +8,7 @@ android {
         applicationId "io.scer.pocketmine"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 192
+        versionCode 193
         versionName "2.0.0-beta3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
@@ -20,20 +20,25 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug{
+            minifyEnabled false
+        }
     }
 }
 
 dependencies {
-    ext {
-        support_library_version = '1.0.0'
-    }
+    def support_library_version = '1.0.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "androidx.appcompat:appcompat:1.0.2"
     implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
     implementation "com.google.android.material:material:${support_library_version}"
-    implementation 'com.github.AppIntro:AppIntro:v5.1.0'
+//    implementation 'com.github.AppIntro:AppIntro:v5.1.0'
+    implementation 'com.github.AppIntro:appintro:master-SNAPSHOT'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'

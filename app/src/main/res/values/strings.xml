@@ -32,13 +32,16 @@
     <string name="server_disabled">Server disabled. Start before to enter command!</string>
     <string name="intro_1_title">Create</string>
     <string name="app_intro_image_content_description" translatable="false">Image</string>
-    <string name="intro_1_description">Create a local server in a few clicks</string>
     <string name="intro_2_title">Download</string>
-    <string name="intro_2_description">Always download the latest versions of PocketMine</string>
+    <string name="intro_2_description">Always download the latest core versions from the PMMP command. Not satisfied? Put the file PocketMine-MP.phar in the appropriate folder on the memory card and use the kernel of third-party developers!</string>
     <string name="intro_3_title">Testing</string>
     <string name="intro_3_description">Test your plugins</string>
     <string name="local_ip">Local IP:</string>
     <string name="beta_description">The app is in beta. If you want to help with the translation into another language or found a mistake - please, report them here (New issue button): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
     <string name="server_started">Server started</string>
     <string name="server_stopped">Server stoped</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intro_1_description">Run PocketMine-MP server both on your Android device! Check the self-made plugins. Play with your friends in the vicinity. Do not limit yourself to anything and let your imagination run wild.</string>
 </resources>

@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".screens.MainActivity">
+        <activity android:name=".screens.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
