@@ -7,6 +7,8 @@ import android.content.Intent
 import androidx.core.app.NotificationCompat
 import io.scer.pocketmine.screens.MainActivity
 import io.scer.pocketmine.server.Server
+import io.scer.pocketmine.server.ServerBus
+import io.scer.pocketmine.server.StopEvent
 
 class ServerService : IntentService("pocketmine_intent_service") {
     private val notificationId = 1
@@ -33,6 +35,10 @@ class ServerService : IntentService("pocketmine_intent_service") {
         )
     }
 
+    private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe {
+        stopSelf()
+    }
+
     override fun onCreate() {
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
                 .setOngoing(true)
@@ -54,6 +60,7 @@ class ServerService : IntentService("pocketmine_intent_service") {
     }
 
     override fun onDestroy() {
+        stopObserver.dispose()
         Server.getInstance().kill()
     }
 }

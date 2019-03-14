@@ -19,12 +19,15 @@ fun splitKeepDelimiter(string: String, regex: Regex): MutableList<String> {
 }
 
 fun String.toHTML(): String {
+
     val csi = "\u001B["
     val color = "${csi}38;5;"
 
+    print(this)
+
     var tokens = 0
     val builder = StringBuilder()
-    splitKeepDelimiter(this, Regex("\\u001B\\[[\\dm;]+")).forEach { token ->
+    splitKeepDelimiter(this, Regex("\\u001B\\[[;\\d]*m")).forEach { token ->
         when (token) {
             "${csi}1m" -> {
                 builder.append("<span style=\"font-weight:bold;\">")
@@ -48,47 +51,47 @@ fun String.toHTML(): String {
             }
 
             "${color}16m" -> {
-                builder.append("<span style=\"color:#000;\">")
+                builder.append("<span style=\"color:#000000;\">")
                 ++tokens
             }
             "${color}19m" -> {
-                builder.append("<span style=\"color:#00A;\">")
+                builder.append("<span style=\"color:#00a00a;\">")
                 ++tokens
             }
             "${color}34m" -> {
-                builder.append("<span style=\"color:#0A0\">")
+                builder.append("<span style=\"color:#0a00a0\">")
                 ++tokens
             }
             "${color}37m" -> {
-                builder.append("<span style=\"color:#0AA;\">")
+                builder.append("<span style=\"color:#0aa0aa;\">")
                 ++tokens
             }
             "${color}124m" -> {
-                builder.append("<span style=\"color:#A00;\">")
+                builder.append("<span style=\"color:#a00a00;\">")
                 ++tokens
             }
             "${color}127m" -> {
-                builder.append("<span style=\"color:#A0A;\">")
+                builder.append("<span style=\"color:#a0aa0a;\">")
                 ++tokens
             }
             "${color}214m" -> {
-                builder.append("<span style=\"color:#FA0;\">")
+                builder.append("<span style=\"color:#fa0fa0;\">")
                 ++tokens
             }
             "${color}145m" -> {
-                builder.append("<span style=\"color:#AAA;\">")
+                builder.append("<span style=\"color:#aaaaaa;\">")
                 ++tokens
             }
             "${color}59m" -> {
-                builder.append("<span style=\"color:#555;\">")
+                builder.append("<span style=\"color:#555555;\">")
                 ++tokens
             }
             "${color}63m" -> {
-                builder.append("<span style=\"color:#55F;\">")
+                builder.append("<span style=\"color:#55f55f;\">")
                 ++tokens
             }
             "${color}83m" -> {
-                builder.append("<span style=\"color:#5F5;\">")
+                builder.append("<span style=\"color:#55ff55;\">")
                 ++tokens
             }
             "${color}87m" -> {
@@ -96,11 +99,11 @@ fun String.toHTML(): String {
                 ++tokens
             }
             "${color}203m" -> {
-                builder.append("<span style=\"color:#F55;\">")
+                builder.append("<span style=\"color:blue;\">")
                 ++tokens
             }
             "${color}207m" -> {
-                builder.append("<span style=\"color:#F5F;\">")
+                builder.append("<span style=\"color:#f5ff5f;\">")
                 ++tokens
             }
             "${color}227m" -> {
@@ -108,7 +111,7 @@ fun String.toHTML(): String {
                 ++tokens
             }
             "${color}231m" -> {
-                builder.append("<span style=\"color:#000;\">")
+                builder.append("<span style=\"color:#000000;\">")
                 ++tokens
             }
             else -> builder.append(token)

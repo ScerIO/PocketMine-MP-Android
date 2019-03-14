@@ -12,6 +12,7 @@ import io.reactivex.disposables.Disposable
 import io.scer.pocketmine.R
 import io.scer.pocketmine.server.Server
 import io.scer.pocketmine.server.ServerBus
+import io.scer.pocketmine.server.StopEvent
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -19,6 +20,8 @@ class ConsoleFragment : Fragment() {
     private lateinit var editCommand: EditText
     private lateinit var labelLog: TextView
     private lateinit var scroll: ScrollView
+    private lateinit var commandRoot: View
+    private lateinit var serverDisabled: View
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_console, container, false)
@@ -28,8 +31,8 @@ class ConsoleFragment : Fragment() {
         labelLog = view.findViewById(R.id.labelLog)
         val send: ImageButton = view.findViewById(R.id.send)
         editCommand = view.findViewById(R.id.editCommand)
-        val commandRoot = view.findViewById<View>(R.id.command_root)
-        val serverDisabled = view.findViewById<View>(R.id.server_disabled)
+        commandRoot = view.findViewById<View>(R.id.command_root)
+        serverDisabled = view.findViewById<View>(R.id.server_disabled)
 
         send.setOnClickListener {
             sendCommand()
@@ -43,10 +46,7 @@ class ConsoleFragment : Fragment() {
             false
         })
 
-        if (!Server.getInstance().isRunning) {
-            commandRoot.visibility = View.GONE
-            serverDisabled.visibility = View.VISIBLE
-        }
+        if (Server.getInstance().isRunning) toggleCommandLine(true)
 
         messageObserver = ServerBus.Log.listen.subscribe{
             if (activity == null) return@subscribe
@@ -66,8 +66,22 @@ class ConsoleFragment : Fragment() {
         return view
     }
 
+    private fun toggleCommandLine(enable: Boolean) {
+        commandRoot.visibility = if (enable) View.VISIBLE else View.GONE
+        serverDisabled.visibility = if (enable) View.GONE else View.VISIBLE
+    }
+
+    private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe {
+        if (activity == null) return@subscribe
+
+        activity!!.runOnUiThread {
+            toggleCommandLine(false)
+        }
+    }
+
     override fun onDestroyView() {
         messageObserver.dispose()
+        stopObserver.dispose()
         super.onDestroyView()
     }
 

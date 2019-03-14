@@ -64,7 +64,6 @@ class ServerFragment : Fragment() {
 
         activity!!.runOnUiThread {
             toggleButtons(true)
-            Snackbar.make(view!!, R.string.server_started, Snackbar.LENGTH_LONG).show()
         }
     }
 
@@ -73,7 +72,6 @@ class ServerFragment : Fragment() {
 
         activity!!.runOnUiThread {
             toggleButtons(false)
-            Snackbar.make(view!!, R.string.server_stopped, Snackbar.LENGTH_LONG).show()
         }
         if (service != null) requireActivity().stopService(service)
     }

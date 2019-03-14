@@ -35,7 +35,6 @@
         card_view:cardElevation="8dp">
 
         <TextView
-            android:visibility="gone"
             android:id="@+id/server_disabled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +50,8 @@
             android:orientation="horizontal"
             android:background="@color/colorPrimary"
             android:gravity="center"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:visibility="gone">
 
             <EditText
                 android:id="@+id/editCommand"
