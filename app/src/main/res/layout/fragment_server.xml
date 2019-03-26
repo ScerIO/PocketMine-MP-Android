@@ -59,9 +59,22 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:text="@string/server_load_statistics"
+            android:textAlignment="center"/>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_processor"
+            android:layout_width="match_parent"
+            android:layout_height="154dp"/>
 
         <TextView
             android:layout_width="wrap_content"

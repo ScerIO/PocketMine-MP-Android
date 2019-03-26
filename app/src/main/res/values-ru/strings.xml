@@ -39,4 +39,6 @@
     <string name="server_started">Сервер запущен</string>
     <string name="server_stopped">Сервер остановлен</string>
     <string name="intro_1_description">Запускай PocketMine-MP сервер прямо на своем Android устройстве! Проверяй самописные плагины. Играй с друзьями, находящимися в близи. Не ограничивай себя ни в чем и дай волю фантазии.</string>
+    <string name="server_load_statistics">Статистика загрузки сервера</string>
+    <string name="download_error">Ошибка загрузки</string>
 </resources>

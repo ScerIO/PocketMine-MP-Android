@@ -42,6 +42,7 @@
     <string name="server_stopped">Server stoped</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="intro_1_description">Run PocketMine-MP server both on your Android device! Check the self-made plugins. Play with your friends in the vicinity. Do not limit yourself to anything and let your imagination run wild.</string>
+    <string name="server_load_statistics">Server load statistics</string>
+    <string name="download_error">Download error</string>
 </resources>

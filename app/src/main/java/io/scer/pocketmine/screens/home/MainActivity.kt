@@ -1,13 +1,14 @@
 package io.scer.pocketmine.screens.home
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.pm.PackageManager
 import android.os.*
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+import android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
             init()
         } else {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            window.decorView.systemUiVisibility = FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS or SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
         }
 
         val appDirectoryPath = applicationInfo.dataDir
@@ -98,7 +103,6 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
         }
     }
 
-    @SuppressLint("TrustAllX509TrustManager")
     private fun downloadFile(url: String, file: File) {
         if (file.exists()) file.delete()
         val view = View.inflate(this, R.layout.download,null)
@@ -112,13 +116,18 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
         dialog.show()
 
         Thread(Runnable {
-            URL(url).saveTo(file)
-            runOnUiThread {
-                if (dialog.isShowing) {
-                    dialog.dismiss()
+            try {
+                URL(url).saveTo(file)
+            } catch (_: Exception) {
+                runOnUiThread {
+                    Snackbar.make(content, R.string.download_error, Snackbar.LENGTH_LONG).show()
                 }
             }
+            runOnUiThread {
+                if (dialog.isShowing) dialog.dismiss()
+            }
         }).start()
+
     }
 
     override fun handleMessage(message: Message): Boolean {

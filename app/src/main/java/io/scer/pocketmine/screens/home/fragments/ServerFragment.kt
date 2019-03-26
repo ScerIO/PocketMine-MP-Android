@@ -10,6 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.formatter.PercentFormatter
 import com.google.android.material.snackbar.Snackbar
 import io.scer.pocketmine.R
 import io.scer.pocketmine.ServerService
@@ -18,9 +22,11 @@ import kotlinx.android.synthetic.main.fragment_server.*
 
 
 class ServerFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_server, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+        inflater.inflate(R.layout.fragment_server, container, false)
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val isStarted = Server.getInstance().isRunning
         toggleButtons(isStarted)
 
@@ -33,9 +39,30 @@ class ServerFragment : Fragment() {
             Server.getInstance().sendCommand("stop")
         }
 
-        ip.text = getIpAddress()
+        dataSet = LineDataSet(ArrayList<Entry>(), null)
+        dataSet.setDrawValues(false)
+        dataSet.mode = LineDataSet.Mode.CUBIC_BEZIER
+        dataSet.color = ContextCompat.getColor(context!!, R.color.secondaryColor)
+        dataSet.setDrawCircles(false)
+        lineData = LineData(dataSet)
+        chart_processor.description.isEnabled = false
+        chart_processor.data = lineData
+        chart_processor.setScaleEnabled(false)
+        chart_processor.setTouchEnabled(false)
+        chart_processor.isDragEnabled = false
+        chart_processor.setDrawBorders(true)
+        chart_processor.legend.isEnabled = false
+        val leftAxis = chart_processor.axisLeft
+        leftAxis.axisMinimum = 0f
+        leftAxis.valueFormatter = PercentFormatter()
+//        leftAxis.axisMaximum = 100f
+        leftAxis.setDrawGridLines(false)
+        val rightAxis = chart_processor.axisRight
+        rightAxis.isEnabled = false
+        val xAxis = chart_processor.xAxis
+        xAxis.isEnabled = false
 
-        return view
+        ip.text = getIpAddress()
     }
 
     @Suppress("DEPRECATION")
@@ -75,8 +102,34 @@ class ServerFragment : Fragment() {
         if (service != null) activity!!.stopService(service)
     }
 
+    private lateinit var dataSet: LineDataSet
+    private lateinit var lineData: LineData
+    private var lastIndex: Int = 0
     private val statUpdateObserver = ServerBus.listen(UpdateStatEvent::class.java).subscribe {
-        println(it)
+        if (activity == null || !it.state.containsKey("Load")) return@subscribe
+
+        activity!!.runOnUiThread {
+            if (chart_processor == null) return@runOnUiThread
+
+            val processor = it.state.getValue("Load").replace("%", "").toFloat()
+            println(it)
+
+            if (lastIndex >= 5) {
+                dataSet.removeFirst()
+                chart_processor.xAxis.axisMinimum = lastIndex.toFloat()
+            }
+
+            if (lineData.entryCount > 0) {
+                lastIndex++
+                lineData.addEntry(Entry((lastIndex).toFloat(), processor), 0)
+            } else {
+                lineData.addEntry(Entry(0f, processor), 0)
+            }
+
+            dataSet.notifyDataSetChanged()
+            chart_processor.notifyDataSetChanged()
+            chart_processor.invalidate()
+        }
     }
 
     private fun toggleButtons(started: Boolean) {

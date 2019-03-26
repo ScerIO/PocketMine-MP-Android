@@ -15,10 +15,12 @@ import java.util.*
 import kotlin.concurrent.schedule
 
 class ConsoleFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_console, container, false)
-        setHasOptionsMenu(true)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+            inflater.inflate(R.layout.fragment_console, container, false)
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         send.setOnClickListener {
             sendCommand()
         }
@@ -41,19 +43,21 @@ class ConsoleFragment : Fragment() {
                 Timer().schedule(100) {
                     if (activity == null) return@schedule
 
-                    activity!!.runOnUiThread {
+                    activity!!.runOnUiThread delayed@ {
+                        if (scroll == null) return@delayed
+
                         scroll.fullScroll(ScrollView.FOCUS_DOWN)
+                        editCommand.isFocusable = true
+                        editCommand.requestFocus()
                     }
                 }
             }
         }
-
-        return view
     }
 
     private fun toggleCommandLine(enable: Boolean) {
         command_root.visibility = if (enable) View.VISIBLE else View.GONE
-        command_root.visibility = if (enable) View.GONE else View.VISIBLE
+        server_disabled.visibility = if (enable) View.GONE else View.VISIBLE
     }
 
     private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe {
@@ -73,8 +77,11 @@ class ConsoleFragment : Fragment() {
     private lateinit var messageObserver: Disposable
 
     private fun sendCommand() {
-        Server.getInstance().sendCommand(editCommand.text.toString())
-        editCommand.text.clear()
+        Runnable {
+            Server.getInstance().sendCommand(editCommand.text.toString())
+        }.run()
+
+        editCommand.setText("")
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

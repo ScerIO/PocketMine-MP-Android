@@ -10,35 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f785f9a-5945-4206-9f2b-61e6c1815584" name="Default" comment="Update dependencies &amp; PHP version">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/utils/common.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/bottom_nav_item_tint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/ServerService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/ServerService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/IntroActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/IntroActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/LauncherActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/LauncherActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/fragments/ConsoleFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ConsoleFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/fragments/ServerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ServerFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/fragments/SettingsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/SettingsFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bottom_nav_colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/color/bottom_nav_colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/download.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/download.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_console.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_console.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ConsoleFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ConsoleFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ServerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ServerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/SettingsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/SettingsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-ru/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-ru/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Bus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Bus.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Server.kt" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Server.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,46 +91,49 @@
     <session id="776922914">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gradle" value="54" />
-          <entry key="kt" value="2427" />
-          <entry key="xml" value="998" />
+          <entry key="gradle" value="57" />
+          <entry key="kt" value="4024" />
+          <entry key="xml" value="1280" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="54" />
-          <entry key="Kotlin" value="2427" />
-          <entry key="XML" value="998" />
+          <entry key="Groovy" value="57" />
+          <entry key="Kotlin" value="4024" />
+          <entry key="XML" value="1280" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="Translations Editor" value="3" />
+          <entry key="Translations Editor" value="5" />
           <entry key="class" value="4" />
-          <entry key="gradle" value="6" />
-          <entry key="java" value="11" />
-          <entry key="kt" value="41" />
+          <entry key="gradle" value="9" />
+          <entry key="java" value="18" />
+          <entry key="kt" value="57" />
           <entry key="li" value="3" />
-          <entry key="xml" value="48" />
+          <entry key="xml" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="" value="3" />
+          <entry key="" value="5" />
           <entry key="CLASS" value="4" />
-          <entry key="Groovy" value="6" />
-          <entry key="JAVA" value="11" />
-          <entry key="Kotlin" value="41" />
+          <entry key="Groovy" value="9" />
+          <entry key="JAVA" value="18" />
+          <entry key="Kotlin" value="57" />
           <entry key="Layout Inspector" value="3" />
-          <entry key="XML" value="48" />
+          <entry key="XML" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
     </session>
@@ -155,52 +141,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/IntroActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="34" column="79" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
-              <folding>
-                <element signature="e#1428#1477#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ServerFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="907">
-              <caret line="94" column="27" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="27" />
-              <folding>
-                <element signature="e#51#605#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ConsoleFragment.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="966">
-              <caret line="57" column="19" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Server.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="5" column="66" lean-forward="true" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Bus.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="-197">
+              <caret line="124" selection-start-line="124" selection-end-line="124" />
             </state>
           </provider>
         </entry>
@@ -208,8 +152,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/MainActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-278">
-              <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+            <state relative-caret-position="299">
+              <caret line="121" column="31" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
+              <folding>
+                <element signature="e#4897#4920#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -217,8 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+            <state relative-caret-position="299">
+              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -229,20 +176,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Server.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+            <state relative-caret-position="368">
+              <caret line="20" column="23" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="23" />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ConsoleFragment.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/color/bottom_nav_colors.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_console.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+            <state relative-caret-position="183">
+              <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -252,12 +217,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="valueResourceFile" />
         <option value="navigationResourceFile" />
         <option value="Kotlin File" />
         <option value="layoutResourceFile_vertical" />
         <option value="Kotlin Class" />
         <option value="resourceFile" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -275,6 +240,7 @@
       <find>PagerOnPageChangeListener</find>
       <find>areColorTransitionsEnabled</find>
       <find>execCommand</find>
+      <find>primaryColor</find>
     </findStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -3781,15 +3747,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_cloud_black.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_cloud_black_192.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_file_download_white_192.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_code_white_192.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_launcher.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/LauncherActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/round_image_button.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-ru/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/ServerService.kt" />
@@ -3811,9 +3771,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_server.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/intro/fragments/Create.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_intro.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/intro/fragments/Download.kt" />
@@ -3822,15 +3779,24 @@
         <option value="$PROJECT_DIR$/app/src/main/res/color/bottom_nav_item_tint.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/color/bottom_nav_colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/gradient_3.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/gradient_1.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/gradient_2.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_cloud_white_192.xml" />
         <option value="$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Bus.kt" />
         <option value="$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Server.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/IntroActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/style.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-v27/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/SettingsFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_server.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ServerFragment.kt" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ConsoleFragment.kt" />
       </list>
     </option>
@@ -3848,7 +3814,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -3893,14 +3860,28 @@
             </path>
             <path>
               <item name="PocketMine-MP-Android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="server" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="PocketMine-MP-Android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="server" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="PocketMine-MP-Android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="server" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="server" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PocketMine-MP-Android" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3912,16 +3893,13 @@
     <property name="ExportApk.SignV2" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="android.sdk.path" value="D:/sdk/android" />
-    <property name="device.picker.selection" value="192.168.0.140:5555" />
+    <property name="device.picker.selection" value="LGMG600Ka67b3e34" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/PocketMine-Android" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\projects\Open\PocketMine-MP-Android\app\src\main\res\color" />
-    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="io.scer.pocketmine.screens" />
       <recent name="io.scer.pocketmine.screens.intro" />
@@ -3932,6 +3910,9 @@
       <recent name="D:\projects\Open\PocketMine-MP-Android\app\src\main\java\io\scer\pocketmine\screens\intro\fragments" />
       <recent name="D:\projects\Open\PocketMine-MP-Android\app\src\main\res\color" />
       <recent name="D:\projects\open\PocketMine-MP-Android\app\src\main\res\drawable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\Open\PocketMine-MP-Android\app\src\main\res\color" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -4028,8 +4009,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="7" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" />
       <window_info id="Image Layers" order="1" />
@@ -4038,6 +4018,36 @@
       <window_info id="Build Variants" order="4" side_tool="true" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.16758545" />
+      <window_info id="Captures" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Logcat" order="0" weight="0.37175494" />
+      <window_info anchor="bottom" id="TODO" order="1" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.32917964" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32917964" />
+      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="6" weight="0.32917964" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32917964" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.32917964" />
+      <window_info anchor="bottom" id="Run" order="9" />
+      <window_info anchor="right" id="StringPreview" order="0" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Flutter Inspector" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="Flutter Outline" order="6" />
+      <window_info anchor="right" id="Preview" order="7" weight="0.25854465" />
+      <window_info anchor="right" id="Android WiFi ADB" order="8" />
+      <window_info anchor="right" id="Device File Explorer" order="9" side_tool="true" weight="0.3296582" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Structure" order="0" side_tool="true" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Build Variants" order="4" side_tool="true" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.16758545" />
       <window_info id="Captures" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Logcat" order="0" visible="true" weight="0.37175494" />
       <window_info anchor="bottom" id="TODO" order="1" />
@@ -4059,7 +4069,7 @@
       <window_info anchor="right" id="Preview" order="7" weight="0.25854465" />
       <window_info anchor="right" id="Android WiFi ADB" order="8" />
       <window_info anchor="right" id="Device File Explorer" order="9" side_tool="true" weight="0.3296582" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -4076,79 +4086,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/utils/common.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <element signature="e#34#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/sdk/android/sources/android-28/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="4330" column="26" selection-start-line="4330" selection-start-column="26" selection-end-line="4330" selection-end-column="26" />
-          <folding>
-            <element signature="e#182653#182654#0" expanded="true" />
-            <element signature="e#182707#182708#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.20/3a9a71152b278d5e36e7346554b4dbb03e565e30/kotlin-stdlib-1.3.20-sources.jar!/kotlin/io/FileReadWrite.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="109" column="59" selection-start-line="109" selection-start-column="59" selection-end-line="109" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/AppIntro-v5.1.0.aar/d1b029fb3ec03cdff9a511af70b43d2d/res/values/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-299">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/sdk/android/platforms/android-28/data/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="44" column="38" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_launcher.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/build_info.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/download.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-v26/fragment_console.xml" />
-    <entry file="file://$PROJECT_DIR$/captures/io.scer.pocketmine_2019.03.14_12.41.li">
-      <provider selected="true" editor-type-id="capture-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/captures/io.scer.pocketmine_2019.03.14_12.45.li">
       <provider selected="true" editor-type-id="capture-editor" />
     </entry>
@@ -4166,79 +4103,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/SettingsFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1334">
-          <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
-          <folding>
-            <element signature="e#1456#1504#0" expanded="true" />
-            <element signature="e#1894#1948#0" expanded="true" />
-            <element signature="e#2605#2659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-111">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/TestFragment.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_console.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="e#1525#1556#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_server.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="92" selection-start-line="25" selection-start-column="87" selection-end-line="25" selection-end-column="98" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/captures/io.scer.pocketmine_2019.03.14_15.51.li">
       <provider selected="true" editor-type-id="capture-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.AppIntro/AppIntro/v5.1.0/bc00e6507b074b4c5d39356734db0afb2d8bb2d5/AppIntro-v5.1.0-sources.jar!/com/github/paolorotolo/appintro/AppIntroBase.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -4251,13 +4142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -4303,30 +4187,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+    <entry file="file://D:/sdk/android/sources/android-28/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        <state relative-caret-position="201">
+          <caret line="2134" column="18" selection-start-line="2134" selection-start-column="18" selection-end-line="2134" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/IntroActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        <state relative-caret-position="598">
+          <caret line="34" column="79" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
         </state>
       </provider>
-    </entry>
-    <entry file="android-dummy://D:/projects/Open/PocketMine-MP-Android/app/Translations Editor">
-      <provider selected="true" editor-type-id="string-resource-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/color/bottom_nav_colors.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -4335,62 +4208,195 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/sdk/android/sources/android-28/java/io/File.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.0.0/bcd167792ec03e930d5c8345c99ae07b2627de84/fragment-1.0.0-sources.jar!/androidx/fragment/app/FragmentManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="2134" column="18" selection-start-line="2134" selection-start-column="18" selection-end-line="2134" selection-end-column="18" />
+        <state relative-caret-position="193">
+          <caret line="3270" selection-start-line="3270" selection-end-line="3270" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/sdk/android/sources/android-26/android/app/ActivityThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="2859" selection-start-line="2859" selection-end-line="2859" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/LauncherActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v27/styles.xml" />
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/instant_run_merged_manifests/debug/processDebugManifest/instant-run/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" selection-start-line="7" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.21/b8815e48fb45e94821287365bd9ce8623f459ac7/kotlin-stdlib-1.3.21-sources.jar!/kotlin/collections/MutableCollectionsJVM.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.1.0/c36541a24c138357e038090ca9f92a7870656913/MPAndroidChart-v3.1.0-sources.jar!/com/github/mikephil/charting/data/ChartData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="432" column="59" selection-start-line="432" selection-start-column="47" selection-end-line="432" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/SettingsFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="73" column="88" selection-start-line="73" selection-start-column="88" selection-end-line="73" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.1.0/c36541a24c138357e038090ca9f92a7870656913/MPAndroidChart-v3.1.0-sources.jar!/com/github/mikephil/charting/formatter/PercentFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
           <folding>
-            <element signature="e#91486#91487#0" expanded="true" />
-            <element signature="e#91518#91519#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/MainActivity.kt">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.1.0/c36541a24c138357e038090ca9f92a7870656913/MPAndroidChart-v3.1.0-sources.jar!/com/github/mikephil/charting/data/DataSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-278">
-          <caret line="49" column="41" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+        <state relative-caret-position="-434">
+          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/sdk/android/sources/android-28/java/util/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7610">
+          <caret line="137" column="11" selection-start-line="137" selection-start-column="11" selection-end-line="137" selection-end-column="11" />
+          <folding>
+            <element signature="e#6092#6093#0" expanded="true" />
+            <element signature="e#6139#6140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_server.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="68" column="48" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="48" />
+          <folding>
+            <element signature="e#1742#1760#0" expanded="true" />
+            <element signature="e#2639#2671#0" expanded="true" />
+            <element signature="e#3175#3201#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Bus.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Server.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="5" column="66" lean-forward="true" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/IntroActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="34" column="79" selection-start-line="34" selection-start-column="79" selection-end-line="34" selection-end-column="79" />
-          <folding>
-            <element signature="e#1428#1477#0" expanded="true" />
-          </folding>
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ServerFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="907">
-          <caret line="94" column="27" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="27" />
+        <state relative-caret-position="-197">
+          <caret line="124" selection-start-line="124" selection-end-line="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/io/scer/pocketmine/server/Server.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="android-dummy://D:/projects/Open/PocketMine-MP-Android/app/Translations Editor">
+      <provider selected="true" editor-type-id="string-resource-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="121" column="31" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
           <folding>
-            <element signature="e#51#605#0" expanded="true" />
+            <element signature="e#4897#4920#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_console.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/io/scer/pocketmine/screens/home/fragments/ConsoleFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="57" column="19" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="19" />
+        <state relative-caret-position="240">
+          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
         </state>
       </provider>
     </entry>

@@ -55,7 +55,7 @@ class SettingsFragment : Fragment() {
     private fun buildSwitch(key: String, value: Boolean): Switch {
         val switch = Switch(context)
         switch.height = resources.getDimension(R.dimen.settings_entity_height).toInt()
-        switch.setTextColor(ContextCompat.getColor(context!!, R.color.secondaryColor))
+        switch.setTextColor(ContextCompat.getColor(context!!, R.color.primaryTextColor))
         switch.text = key
         switch.isChecked = value
         switch.textSize = 14F
@@ -71,7 +71,7 @@ class SettingsFragment : Fragment() {
         root.orientation = LinearLayout.VERTICAL
 
         val textView = TextView(context)
-        textView.setTextColor(ContextCompat.getColor(context!!, R.color.secondaryColor))
+        textView.setTextColor(ContextCompat.getColor(context!!, R.color.primaryTextColor))
         textView.text = key
 
         root.addView(textView)
