@@ -9,7 +9,6 @@ import androidx.annotation.RequiresApi
 const val CHANNEL_ID = "pocketmine_service_channel"
 
 class App : Application() {
-
     override fun onCreate() {
         super.onCreate()
 

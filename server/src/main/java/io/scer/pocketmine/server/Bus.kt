@@ -16,7 +16,6 @@ data class UpdateStatEvent(val state: Map<String, String>)
 object ServerBus {
     private val publisher = PublishSubject.create<Any>()
 
-
     fun publish(event: Any) {
         publisher.onNext(event)
     }
@@ -30,7 +29,7 @@ object ServerBus {
         private val currentLog = SpannableStringBuilder()
 
         fun message(text: String) {
-            currentLog.append(fromHtml(text.toHTML()))
+            currentLog.append(text.toHTML().fromHtml())
             log.onNext(currentLog)
         }
 

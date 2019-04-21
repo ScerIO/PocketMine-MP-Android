@@ -15,8 +15,7 @@ class Properties {
             try {
                 val key = property[0]
                 val value = property[1].trim()
-                val lowerCaseValue = value.toLowerCase()
-                when (lowerCaseValue) {
+                when (value.toLowerCase()) {
                     "on", "true", "yes" -> this.config[key] = true
                     "off", "false", "no" -> this.config[key] = false
                     else -> this.config[key] = value

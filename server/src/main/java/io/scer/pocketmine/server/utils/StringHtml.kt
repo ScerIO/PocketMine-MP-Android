@@ -19,7 +19,6 @@ fun splitKeepDelimiter(string: String, regex: Regex): MutableList<String> {
 }
 
 fun String.toHTML(): String {
-
     val csi = "\u001B["
     val color = "${csi}38;5;"
 
@@ -122,9 +121,9 @@ fun String.toHTML(): String {
 }
 
 @Suppress("DEPRECATION")
-fun fromHtml(html: String): Spanned {
+fun String.fromHtml(): Spanned {
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-        Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY)
+        Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY)
     else
-        Html.fromHtml(html)
+        Html.fromHtml(this)
 }

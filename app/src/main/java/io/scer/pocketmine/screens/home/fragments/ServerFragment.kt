@@ -55,7 +55,6 @@ class ServerFragment : Fragment() {
         val leftAxis = chart_processor.axisLeft
         leftAxis.axisMinimum = 0f
         leftAxis.valueFormatter = PercentFormatter()
-//        leftAxis.axisMaximum = 100f
         leftAxis.setDrawGridLines(false)
         val rightAxis = chart_processor.axisRight
         rightAxis.isEnabled = false

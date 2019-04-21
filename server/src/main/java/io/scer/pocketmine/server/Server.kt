@@ -71,48 +71,46 @@ class Server(val files: Files) {
                 "--enable-ansi",
                 "--console.title-tick=1"
         )
-        builder.redirectErrorStream(true)
-        builder.directory(files.dataDirectory)
+                .redirectErrorStream(true)
+                .directory(files.dataDirectory)
         builder.environment()["TMPDIR"] = files.dataDirectory.toString() + "/tmp"
         try {
             process = builder.start()
             stdout = process!!.inputStream
             stdin = process!!.outputStream
-            object : Thread() {
-                override fun run() {
-                    val reader = BufferedReader(InputStreamReader(stdout!!, Charset.forName("UTF-8")))
-                    ServerBus.publish(StartEvent())
-                    while (isRunning) {
-                        try {
-                            val buffer = CharArray(8192)
-                            var size: Int
-                            do {
-                                size = reader.read(buffer, 0, buffer.size)
-                                var stringBuilder = StringBuilder()
-                                for (i in 0 until size) {
-                                    val character = buffer[i]
-                                    if (character == '\r') { }
-                                    else if (character == '\n' || character == '\u0007') {
-                                        val line = stringBuilder.toString()
-                                        if (character == '\u0007' && line.startsWith("\u001B]0;")) {
-                                            val statsArray = line.substring(4).split(" | ")
-                                            ServerBus.publish(UpdateStatEvent(associateStats(statsArray)))
-                                        } else {
-                                            ServerBus.Log.message(line + "\n")
-                                        }
-                                        stringBuilder = StringBuilder()
+            Thread {
+                val reader = BufferedReader(InputStreamReader(stdout!!, Charset.forName("UTF-8")))
+                ServerBus.publish(StartEvent())
+                while (isRunning) {
+                    try {
+                        val buffer = CharArray(8192)
+                        var size: Int
+                        do {
+                            size = reader.read(buffer, 0, buffer.size)
+                            var stringBuilder = StringBuilder()
+                            for (i in 0 until size) {
+                                val character = buffer[i]
+                                if (character == '\r') { }
+                                else if (character == '\n' || character == '\u0007') {
+                                    val line = stringBuilder.toString()
+                                    if (character == '\u0007' && line.startsWith("\u001B]0;")) {
+                                        val statsArray = line.substring(4).split(" | ")
+                                        ServerBus.publish(UpdateStatEvent(associateStats(statsArray)))
                                     } else {
-                                        stringBuilder.append(buffer[i])
+                                        ServerBus.Log.message(line + "\n")
                                     }
+                                    stringBuilder = StringBuilder()
+                                } else {
+                                    stringBuilder.append(buffer[i])
                                 }
-                            } while (size != -1)
-                        } catch (e: Exception) {
-                            e.printStackTrace()
-                            ServerBus.publish(ErrorEvent(e.message.toString(), Errors.UNKNOWN))
-                        }
+                            }
+                        } while (size != -1)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        ServerBus.publish(ErrorEvent(e.message.toString(), Errors.UNKNOWN))
                     }
-                    ServerBus.publish(StopEvent())
                 }
+                ServerBus.publish(StopEvent())
             }.start()
         } catch (e: Exception) {
             e.printStackTrace()
