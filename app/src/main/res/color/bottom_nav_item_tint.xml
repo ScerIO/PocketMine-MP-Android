@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-  <item android:alpha="1.0" android:color="?attr/colorPrimary" android:state_checked="true" android:state_enabled="true"/>
-  <item android:alpha="0.54" android:color="#000000" android:state_enabled="true"/>
-  <!-- 38% of 0.54 -->
-  <item android:alpha="0.21" android:color="#000000"/>
-</selector>

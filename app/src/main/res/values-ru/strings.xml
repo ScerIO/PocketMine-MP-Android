@@ -3,7 +3,6 @@
     <string name="stop_server">Стоп</string>
     <string name="downloading">Загрузка %name%…</string>
     <string name="error_32bit">Приложение не поддерживает архитектуру процессора x32, только x64! \n\n Пожалуйста, прочтите требования PocketMine-MP: https://pmmp.readthedocs.io/en/rtfd/installation/requirements.html \n\n Это не наше решение, а команды PMMP, прошу отнестись с пониманием и не снижать оценку, мы ничего не можем с этим сделать 😔</string>
-    <string name="exit">Выйти</string>
     <string name="enter">Отправить</string>
     <string name="console">Консоль</string>
     <string name="clear">Очистить</string>
@@ -22,10 +21,6 @@
     <string name="game_version">Версия игры</string>
     <string name="download">Загрузить</string>
     <string name="development_build">Это сборка находиться в стадии разработки и может содержать ошибки</string>
-    <string name="server_settings">Настройки сервера</string>
-    <string name="app_settings">Настройки приложения</string>
-    <string name="ansi_support">Поддержка ANSI</string>
-    <string name="font_size">Размер шрифта</string>
     <string name="server">Сервер</string>
     <string name="console_cleaned">Консоль очищена</string>
     <string name="server_disabled">Сервер отключен. Начните для ввода команды!</string>
@@ -36,8 +31,6 @@
     <string name="intro_3_description">Тестируй свои плагины</string>
     <string name="local_ip">Локальный IP:</string>
     <string name="beta_description">Приложение находится в стадии бета-сборки. Если ты желаешь помочь с переводом на другой язык или нашел ошибку - прошу, сообщи о них сюда (кнопка New issue):    https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
-    <string name="server_started">Сервер запущен</string>
-    <string name="server_stopped">Сервер остановлен</string>
     <string name="intro_1_description">Запускай PocketMine-MP сервер прямо на своем Android устройстве! Проверяй самописные плагины. Играй с друзьями, находящимися в близи. Не ограничивай себя ни в чем и дай волю фантазии.</string>
     <string name="server_load_statistics">Статистика загрузки сервера</string>
     <string name="download_error">Ошибка загрузки</string>

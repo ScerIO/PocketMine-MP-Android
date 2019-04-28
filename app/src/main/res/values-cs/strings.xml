@@ -1,0 +1,39 @@
+<resources>
+    <string name="start_server">Start</string>
+    <string name="stop_server">Stop</string>
+    <string name="downloading">Stahování %name%…</string>
+    <string name="error_32bit">Aplikace nepodporuje x32 procesor architektury, jen x64! \n\n Prosím, přečtěte si PocketMine-MP požadavky o x32 podpora: https://pmmp.readthedocs.io/en/rtfd/installation/requirements.html \n\n Tohle není naše rozhodnutí, ale PMMP týmu, prosím pochopte a nesnižujte hodnocení aplikace, mi s tím nic dělat nemůžem</string>
+    <string name="enter">Jít</string>
+    <string name="console">Konzole</string>
+    <string name="clear">Smazat</string>
+    <string name="download_phar">Stáhnout PocketMine-MP</string>
+    <string name="phar_does_not_exist">Nemůžeme najít složku PocketMine-MP.phar!</string>
+    <string name="kill">Zabít server</string>
+    <string name="not_enough_rights">Aby tato aplikace fungovala správně, potřebuje permisi k paměti tvého zařízení!</string>
+    <string name="settings">Nastavení</string>
+    <string name="settings_does_not_exist">Nemůžeme otevřít server.properties</string>
+    <string name="assemblies_error">Nepodařilo se nám získat sestavu PocketMine-MP</string>
+    <string name="select_channel">Vyber si kanál </string>
+    <string name="build_info">Info sestavení</string>
+    <string name="api_version">Verze API </string>
+    <string name="build_number">Číslo sestavení</string>
+    <string name="branch">Brenč</string>
+    <string name="game_version">Verze hry</string>
+    <string name="download">Stáhnout</string>
+    <string name="development_build">Tahle aplikace je ve "vývoji" a může mýt problémy, spadnutí aplikace, Poškodit data, nebo zničit tvé pluginy</string>
+    <string name="server">Server</string>
+    <string name="console_cleaned">Konzole byla smazána</string>
+    <string name="server_disabled">Server je vypnut. Nastartuj server abys mohl/a psát komandy!</string>
+    <string name="intro_1_title">Vytvorit</string>
+    <string name="intro_2_title">Stáhnout</string>
+    <string name="intro_2_description">Vždy stáhnout nejnovější verzi "core" z PMMP komandu. Nejste spokojený/á? Dej složku PocketMine-MP.phar do odpovídající složky na vaší paměťovou kartu a použíj jádro developerů třetích stran!</string>
+    <string name="intro_3_title">Test</string>
+    <string name="intro_3_description">Otestuj pluginy</string>
+    <string name="local_ip">Lokální IP:</string>
+    <string name="beta_description">Aplikace je v beta verzi. Jestli chceš pomoc s překládáním do dalších jazyku nebo jsi nešel/a chybu - prosím, nashlaš je tady (Nový problém): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="intro_1_description">Použij PocketMine-MP server na tvých Android zařízení! Koukej na vlastní pluginy. Hraj s tvými kamarády v okolí. Neomezujte se ničím a nechte svou fantazii volně běžet.</string>
+    <string name="server_load_statistics">Statistiky serveru</string>
+    <string name="download_error">eror stahování</string>
+</resources>
