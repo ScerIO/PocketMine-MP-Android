@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name" translatable="false">PocketMine-MP</string>
+    <string name="start_server">Başlat</string>
+    <string name="stop_server">Durdur</string>
+    <string name="downloading">%name% indiriliyor...</string>
+    <string name="error_32bit">Uygulama x32 işlemci mimarisini desteklemiyor, sadece x64'ü destekliyor!  \n\n Lütfen, x32 desteği ile ilgili PocketMine-MP gereksinimlerini okuyun: https://pmmp.readthedocs.io/en/rtfd/installation/requirements.html \n\n Bu bizim kararımız değil PMMP ekibinin kararı, lütfen  anlayışlı davranın ve notu düşürmeyin, onunla hiçbir şey yapamayız.</string>
+    <string name="enter">Gönder</string>
+    <string name="console">Konsol</string>
+    <string name="clear">Temizle</string>
+    <string name="download_phar">PocketMine-MP indiriliyor</string>
+    <string name="phar_does_not_exist">PocketMine-MP.phar dosyası bulunamadı!</string>
+    <string name="kill">Zorla durdur</string>
+    <string name="not_enough_rights">Uygulamanın düzgün çalışması için cihazınızın hafızasına erişim izni vermeniz gerekir!</string>
+    <string name="settings">Ayarlar</string>
+    <string name="settings_does_not_exist">server.properties dosyası açılamıyor</string>
+    <string name="assemblies_error">PocketMine-MP yazılımının düzeneklerine ulaşılamıyor</string>
+    <string name="select_channel">Kanalı seç</string>
+    <string name="build_info">Mimari bilgileri</string>
+    <string name="api_version">API versiyonu</string>
+    <string name="build_number">Mimari numarası</string>
+    <string name="branch">Branş</string>
+    <string name="game_version">Oyun versiyonu</string>
+    <string name="download">İndir</string>
+    <string name="development_build">Geliştirilme aşamasındadır ve hatalara, çökmelere, verilerinizi ve eklentilerinizi bozmasına olabilir.</string>
+    <string name="server">Sunucu</string>
+    <string name="console_cleaned">Konsol temizlendi</string>
+    <string name="server_disabled">Sunucu devre dışı.  Komut girmeden önce başlatın!</string>
+    <string name="intro_1_title">Oluştur</string>
+    <string name="app_intro_image_content_description" translatable="false">Resim</string>
+    <string name="intro_2_title">İndir</string>
+    <string name="intro_2_description">Her zaman PMMP komutundan en son çekirdek versiyonları indirin.  Tatmin olmadınız mı? PocketMine-MP.phar dosyasını hafıza kartındaki uygun klasöre koyun ve üçüncü taraf geliştiricilerin çekirdeğini kullanın!</string>
+    <string name="intro_3_title">Kontrol Ediliyor</string>
+    <string name="intro_3_description">Eklentiler Kontrol ediliyor</string>
+    <string name="local_ip">Yerel IP:</string>
+    <string name="beta_description">Uygulama beta sürümünde.  Başka bir dile çeviri konusunda yardım etmek ya da bir sorunda bulmak istiyorsanız - lütfen bunları burada bildirin (Yeni sayı düğmesi): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="intro_1_description">Android cihazınızda hemen PocketMine-MP sunucusunu çalıştırın! Kendi kendine yapılan eklentileri kontrol edin. Çevrede arkadaşlarınızla oynayın. Kendinizi hiçbir şeyle sınırlamayın ve hayal gücünüzü vahşi çalıştırmasına izin vermeyin.</string>
+    <string name="server_load_statistics">Sunucu yüklenme istatistikleri</string>
+    <string name="download_error">İndirme hatası</string>
+</resources>
