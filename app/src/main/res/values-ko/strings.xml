@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">PocketMine-MP</string>
     <string name="start_server">시작</string>
     <string name="stop_server">종료</string>
     <string name="downloading">%name%을(를) 다운로드 중…</string>
@@ -38,4 +37,5 @@
     <string name="intro_1_description">PocketMine-MP 서버를 안드로이드에서 실행하세요! 자작 플러그인을 테스트하세요. 친구들과 함께 플레이하세요. 어떤 것에 제한 없이, 상상을 넓게 펼치세요.</string>
     <string name="server_load_statistics">서버 사용량 통계</string>
     <string name="download_error">다운로드 오류</string>
+    <string name="unknown_errop">알수없는 오류</string>
 </resources>

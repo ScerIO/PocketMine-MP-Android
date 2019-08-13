@@ -34,4 +34,6 @@
     <string name="intro_1_description">Запускай PocketMine-MP сервер прямо на своем Android устройстве! Проверяй самописные плагины. Играй с друзьями, находящимися в близи. Не ограничивай себя ни в чем и дай волю фантазии.</string>
     <string name="server_load_statistics">Статистика загрузки сервера</string>
     <string name="download_error">Ошибка загрузки</string>
+    <string name="app_intro_image_content_description" translatable="false">Изображение</string>
+    <string name="unknown_errop">Неизвестная ошибка</string>
 </resources>

@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">PocketMine-MP</string>
-    <string name="start_server">开始</string>
+    <string name="start_server">开始</string>
     <string name="stop_server">停止</string>
     <string name="downloading">正在下载 %name%…</string>
     <string name="error_32bit">此应用不支持32位架构，仅支持64位\n\n 请阅读PocketMine-MP关于32位支持的要求: https://pmmp.readthedocs.io/en/rtfd/installation/requirements.html \n\n 这不是我们的决定，而是PMMP团队的，我们无法对此做任何事情，请理解并且不要降低评分。</string>
@@ -38,4 +37,5 @@
     <string name="intro_1_description">在您的Android设备上运行PocketMine-MP服务器！ 测试自制插件。 和你附近的朋友一起玩耍。 不要局限于任何事情，使你的想象力疯狂。</string>
     <string name="server_load_statistics">服务器负载统计</string>
     <string name="download_error">下载错误</string>
+    <string name="unknown_errop">未知錯誤</string>
 </resources>

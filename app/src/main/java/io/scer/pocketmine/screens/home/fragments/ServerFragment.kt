@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
@@ -20,10 +19,9 @@ import io.scer.pocketmine.ServerService
 import io.scer.pocketmine.server.*
 import kotlinx.android.synthetic.main.fragment_server.*
 
-
-class ServerFragment : Fragment() {
+class ServerFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(R.layout.fragment_server, container, false)
+            inflater.inflate(R.layout.fragment_server, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -71,24 +69,24 @@ class ServerFragment : Fragment() {
         return if (ip == 0) "127.0.0.1" else Formatter.formatIpAddress(ip)
     }
 
-    private val startObserver = ServerBus.listen(StartEvent::class.java).subscribe {
+    private val startObserver = ServerBus.listen(StartEvent::class.java).subscribe({
         if (activity == null) return@subscribe
 
         activity!!.runOnUiThread {
             toggleButtons(true)
         }
-    }
+    }, ::handleError)
 
-    private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe {
+    private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe({
         if (activity == null) return@subscribe
 
         activity!!.runOnUiThread {
             toggleButtons(false)
         }
         if (service != null) requireActivity().stopService(service)
-    }
+    }, ::handleError)
 
-    private val errorObserver = ServerBus.listen(ErrorEvent::class.java).subscribe {
+    private val errorObserver = ServerBus.listen(ErrorEvent::class.java).subscribe ({
         if (activity == null) return@subscribe
 
         when (it.type) {
@@ -99,12 +97,12 @@ class ServerFragment : Fragment() {
             toggleButtons(false)
         }
         if (service != null) activity!!.stopService(service)
-    }
+    }, ::handleError)
 
     private lateinit var dataSet: LineDataSet
     private lateinit var lineData: LineData
     private var lastIndex: Int = 0
-    private val statUpdateObserver = ServerBus.listen(UpdateStatEvent::class.java).subscribe {
+    private val statUpdateObserver = ServerBus.listen(UpdateStatEvent::class.java).subscribe ({
         if (activity == null || !it.state.containsKey("Load")) return@subscribe
 
         activity!!.runOnUiThread {
@@ -129,11 +127,15 @@ class ServerFragment : Fragment() {
             chart_processor.notifyDataSetChanged()
             chart_processor.invalidate()
         }
-    }
+    }, ::handleError)
 
-    private fun toggleButtons(started: Boolean) {
-        start.isEnabled = !started
-        stop.isEnabled = started
+    private fun toggleButtons(isStarted: Boolean) {
+        if (start.isEnabled != !isStarted) {
+            start.isEnabled = !isStarted
+        }
+        if (stop.isEnabled != isStarted) {
+            stop.isEnabled = isStarted
+        }
     }
 
     override fun onDestroyView() {

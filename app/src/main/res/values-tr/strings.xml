@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name" translatable="false">PocketMine-MP</string>
     <string name="start_server">Başlat</string>
     <string name="stop_server">Durdur</string>
     <string name="downloading">%name% indiriliyor...</string>
-    <string name="error_32bit">Uygulama x32 işlemci mimarisini desteklemiyor, sadece x64'ü destekliyor!  \n\n Lütfen, x32 desteği ile ilgili PocketMine-MP gereksinimlerini okuyun: https://pmmp.readthedocs.io/en/rtfd/installation/requirements.html \n\n Bu bizim kararımız değil PMMP ekibinin kararı, lütfen  anlayışlı davranın ve notu düşürmeyin, onunla hiçbir şey yapamayız.</string>
+    <string name="error_32bit">Uygulama x32 işlemci mimarisini desteklemiyor, sadece x64\'ü destekliyor!  \n\n Lütfen, x32 desteği ile ilgili PocketMine-MP gereksinimlerini okuyun: https://pmmp.readthedocs.io/en/rtfd/installation/requirements.html \n\n Bu bizim kararımız değil PMMP ekibinin kararı, lütfen  anlayışlı davranın ve notu düşürmeyin, onunla hiçbir şey yapamayız.</string>
     <string name="enter">Gönder</string>
     <string name="console">Konsol</string>
     <string name="clear">Temizle</string>
@@ -38,4 +37,5 @@
     <string name="intro_1_description">Android cihazınızda hemen PocketMine-MP sunucusunu çalıştırın! Kendi kendine yapılan eklentileri kontrol edin. Çevrede arkadaşlarınızla oynayın. Kendinizi hiçbir şeyle sınırlamayın ve hayal gücünüzü vahşi çalıştırmasına izin vermeyin.</string>
     <string name="server_load_statistics">Sunucu yüklenme istatistikleri</string>
     <string name="download_error">İndirme hatası</string>
+    <string name="unknown_errop">Bilinmeyen hata</string>
 </resources>

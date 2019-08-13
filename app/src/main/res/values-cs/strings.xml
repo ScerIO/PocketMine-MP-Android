@@ -36,4 +36,5 @@
     <string name="intro_1_description">Použij PocketMine-MP server na tvých Android zařízení! Koukej na vlastní pluginy. Hraj s tvými kamarády v okolí. Neomezujte se ničím a nechte svou fantazii volně běžet.</string>
     <string name="server_load_statistics">Statistiky serveru</string>
     <string name="download_error">eror stahování</string>
+    <string name="unknown_errop">Neznámá chyba</string>
 </resources>

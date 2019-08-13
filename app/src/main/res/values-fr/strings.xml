@@ -36,4 +36,5 @@
     <string name="intro_1_description">Utilisez un serveur PocketMine-MP sur votre appareil Android ! Vérifiez les plugins faits tout seul. Jouez avec vos amis et vos voisins. Ne vous limitez à rien et laissez travailler votre imagination.</string>
     <string name="server_load_statistics">Statistiques de chargement du serveur</string>
     <string name="download_error">Erreur de téléchargement</string>
+    <string name="unknown_errop">Erreur inconnue</string>
 </resources>

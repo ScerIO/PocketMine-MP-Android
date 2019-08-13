@@ -3,7 +3,6 @@ package io.scer.pocketmine.screens.home.fragments
 import android.os.Bundle
 import android.view.*
 import android.widget.ScrollView
-import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import io.reactivex.disposables.Disposable
 import io.scer.pocketmine.R
@@ -14,7 +13,8 @@ import kotlinx.android.synthetic.main.fragment_console.*
 import java.util.*
 import kotlin.concurrent.schedule
 
-class ConsoleFragment : Fragment() {
+
+class ConsoleFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             inflater.inflate(R.layout.fragment_console, container, false)
 
@@ -60,13 +60,13 @@ class ConsoleFragment : Fragment() {
         server_disabled.visibility = if (enable) View.GONE else View.VISIBLE
     }
 
-    private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe {
+    private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe({
         if (activity == null) return@subscribe
 
         activity!!.runOnUiThread {
             toggleCommandLine(false)
         }
-    }
+    }, ::handleError)
 
     override fun onDestroyView() {
         messageObserver.dispose()
