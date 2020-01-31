@@ -1,0 +1,41 @@
+<resources>
+    <string name="start_server">시작</string>
+    <string name="stop_server">종료</string>
+    <string name="downloading">%name%을(를) 다운로드 중…</string>
+    <string name="error_32bit">이 앱은 x32비트 운영체제를 지원하지 않습니다, 오직 64비트만 지원합니다. \n\n x32비트 운영체제에 대한 PocketMine-MP 요구사항을 읽어보시기 바랍니다: https://pmmp.readthedocs.io/en/rtfd/installation/requirements.html \n\n 이는 PMMP 팀의 결정으로 인한 것이며, 앱 제작자의 결정이 아닙니다. 사용자의 이해를 바라며, 이로 인한 평점은 내리지 말아주세요. 앱 제작자는 할 수 있는 것이 없습니다.</string>
+    <string name="enter">Enter</string>
+    <string name="console">콘솔</string>
+    <string name="clear">지우기</string>
+    <string name="download_phar">PocketMine-MP 다운로드</string>
+    <string name="phar_does_not_exist">PocketMine-MP.phar 파일을 찾을 수 없습니다!</string>
+    <string name="kill">강제 종료</string>
+    <string name="not_enough_rights">앱이 작동하기 위해서는, 장치에 대한 메모리 권한을 부여해야 합니다</string>
+    <string name="settings">설정</string>
+    <string name="settings_does_not_exist">server.properties를 열 수 없습니다</string>
+    <string name="assemblies_error">PocketMine-MP 어셈블리를 가져오지 못했습니다</string>
+    <string name="select_channel">채널 선택</string>
+    <string name="build_info">빌드 정보</string>
+    <string name="api_version">API 버전</string>
+    <string name="build_number">빌드 번호</string>
+    <string name="branch">분기점 (Branch)</string>
+    <string name="game_version">게임 버전</string>
+    <string name="download">다운로드</string>
+    <string name="development_build">개발 빌드에서는 버그, 충돌, 플러그인이 손상될 수 있습니다</string>
+    <string name="server">서버</string>
+    <string name="console_cleaned">콘솔 화면을 지웠습니다</string>
+    <string name="server_disabled">서버가 비활성화되어있습니다, 명령어를 치기전에 서버를 활성화해주세요</string>
+    <string name="intro_1_title">만들기</string>
+    <string name="app_intro_image_content_description" translatable="false">이미지</string>
+    <string name="intro_2_title">다운로드</string>
+    <string name="intro_2_description">항상 PMMP로부터 최신 코어버전 다운로드. 만족스럽지 않다면, 구동기 폴더에 PocketMine-MP.phar 파일을 넣고 타개발자의 커널(kernel)을 사용하세요</string>
+    <string name="intro_3_title">테스트 중</string>
+    <string name="intro_3_description">플러그인 테스트</string>
+    <string name="local_ip">기기 IP:</string>
+    <string name="beta_description">이 앱은 베타 버전입니다. 다른 언어로 번역하거나, 오류가 발견된다면 이곳(New issue 버튼)에 제보하여 주세요: \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="intro_1_description">PocketMine-MP 서버를 안드로이드에서 실행하세요! 자작 플러그인을 테스트하세요. 친구들과 함께 플레이하세요. 어떤 것에 제한 없이, 상상을 넓게 펼치세요.</string>
+    <string name="server_load_statistics">서버 사용량 통계</string>
+    <string name="download_error">다운로드 오류</string>
+    <string name="unknown_errop">알수없는 오류</string>
+</resources>

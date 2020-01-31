@@ -4,7 +4,6 @@
     <string name="stop_server">Stop</string>
     <string name="downloading">Downloading %name%…</string>
     <string name="error_32bit">App does not support x32 processor architecture, only x64! \n\n Please, read PocketMine-MP requirements about x32 support: https://pmmp.readthedocs.io/en/rtfd/installation/requirements.html \n\n This is not our decision, but the PMMP team, please treat with understanding and not lower the grade, we can’t do anything with it</string>
-    <string name="exit">Exit</string>
     <string name="enter">Enter</string>
     <string name="console">Console</string>
     <string name="clear">Clear</string>
@@ -23,26 +22,21 @@
     <string name="game_version">Game version</string>
     <string name="download">Download</string>
     <string name="development_build">It is development build and it may have bugs, crash, corrupt your data, or break your plugins</string>
-    <string name="server_settings">Server settings</string>
-    <string name="app_settings">App settings</string>
-    <string name="ansi_support">ANSI support</string>
-    <string name="font_size">Font size</string>
     <string name="server">Server</string>
     <string name="console_cleaned">Console was cleaned</string>
     <string name="server_disabled">Server disabled. Start before to enter command!</string>
     <string name="intro_1_title">Create</string>
-    <string name="app_intro_image_content_description" translatable="false">Image</string>
+    <string name="app_intro_image_content_description">Image</string>
     <string name="intro_2_title">Download</string>
     <string name="intro_2_description">Always download the latest core versions from the PMMP command. Not satisfied? Put the file PocketMine-MP.phar in the appropriate folder on the memory card and use the kernel of third-party developers!</string>
     <string name="intro_3_title">Testing</string>
     <string name="intro_3_description">Test your plugins</string>
     <string name="local_ip">Local IP:</string>
-    <string name="beta_description">The app is in beta. If you want to help with the translation into another language or found a mistake - please, report them here (New issue button): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
-    <string name="server_started">Server started</string>
-    <string name="server_stopped">Server stoped</string>
+    <string name="beta_description">The app is in beta. If you want to help with the translation into another language or found a mistake - please, report them here (New issue button): \n\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="intro_1_description">Run PocketMine-MP server both on your Android device! Check the self-made plugins. Play with your friends in the vicinity. Do not limit yourself to anything and let your imagination run wild.</string>
     <string name="server_load_statistics">Server load statistics</string>
     <string name="download_error">Download error</string>
+    <string name="unknown_errop">Unknown error</string>
 </resources>

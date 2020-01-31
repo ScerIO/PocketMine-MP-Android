@@ -1,0 +1,40 @@
+<resources>
+    <string name="start_server">Démarrer</string>
+    <string name="stop_server">Arrêter</string>
+    <string name="downloading">Téléchargement de %name%…</string>
+    <string name="error_32bit">L\'application ne supporte pas l\'architecture de processeur x32, seulement x64 ! \n\n \\S\'il vous plaît, veuillez lire les exigences PocketMine-MP à propos du support x32: https://pmmp.readthedocs.io/en/rtfd/installation/requirements.html \n\n Cela n\'est pas notre décision, mais celle de l\'équipe PMMP, veuillez traiter avec compréhension et ne pas baisser la note donnée, nous ne pouvons rien faire à ce sujet</string>
+    <string name="enter">Entrer</string>
+    <string name="console">Console</string>
+    <string name="clear">Effacer</string>
+    <string name="download_phar">Téléchargement de PocketMine-MP</string>
+    <string name="phar_does_not_exist">Impossible de trouver le fichier PocketMine-MP.phar !</string>
+    <string name="kill">Arrêter le server</string>
+    <string name="not_enough_rights">Pour que l\'application fonctionne correctement, veuillez accorder l\'accs à la mémoire de votre appareil !</string>
+    <string name="settings">Paramètres</string>
+    <string name="settings_does_not_exist">Impossible d\'ouvrir server.properties</string>
+    <string name="assemblies_error">Impossible d\'obtenir les assemblages de PocketMine-MP</string>
+    <string name="select_channel">Selectionner le channel</string>
+    <string name="build_info">Info de Build</string>
+    <string name="api_version">Version API</string>
+    <string name="build_number">Numéro de Build</string>
+    <string name="branch">Branche</string>
+    <string name="game_version">Version du Jeu</string>
+    <string name="download">Télécharger</string>
+    <string name="development_build">Cela est un build de développement et il peut y avoir des bugs, crashs, il peut corrompre vos données ou casser vos plugins</string>
+    <string name="server">Serveur</string>
+    <string name="console_cleaned">La console a été nettoyée</string>
+    <string name="server_disabled">Serveur désactivé. Démarrer avant d\'entrer une commande !</string>
+    <string name="intro_1_title">Créer</string>
+    <string name="intro_2_title">Télécharger</string>
+    <string name="intro_2_description">Téléchargez toujours les dernières versions de base à travers la commande PMMP. Pas satisfait? Mettez le fichier PocketMine-MP.phar dans le dossier approprié sur la carte mémoire et utilisez le noyau de développeurs tiers !</string>
+    <string name="intro_3_title">Essayer</string>
+    <string name="intro_3_description">Essayez vos plugins</string>
+    <string name="local_ip">Adresse IP locale:</string>
+    <string name="beta_description">Cette application est en version de test (beta). Si vous souhaitez contribuer à la traduction dans une autre langue ou si vous avez trouvé une erreur, merci de la signaler ici (Le bouton nouveau problème): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="intro_1_description">Utilisez un serveur PocketMine-MP sur votre appareil Android ! Vérifiez les plugins faits tout seul. Jouez avec vos amis et vos voisins. Ne vous limitez à rien et laissez travailler votre imagination.</string>
+    <string name="server_load_statistics">Statistiques de chargement du serveur</string>
+    <string name="download_error">Erreur de téléchargement</string>
+    <string name="unknown_errop">Erreur inconnue</string>
+</resources>
