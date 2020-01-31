@@ -31,7 +31,6 @@
     <string name="intro_3_title">Kontrol Ediliyor</string>
     <string name="intro_3_description">Eklentiler Kontrol ediliyor</string>
     <string name="local_ip">Yerel IP:</string>
-    <string name="beta_description">Uygulama beta sürümünde.  Başka bir dile çeviri konusunda yardım etmek ya da bir sorunda bulmak istiyorsanız - lütfen bunları burada bildirin (Yeni sayı düğmesi): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="intro_1_description">Android cihazınızda hemen PocketMine-MP sunucusunu çalıştırın! Kendi kendine yapılan eklentileri kontrol edin. Çevrede arkadaşlarınızla oynayın. Kendinizi hiçbir şeyle sınırlamayın ve hayal gücünüzü vahşi çalıştırmasına izin vermeyin.</string>

@@ -31,7 +31,6 @@
     <string name="intro_3_title">테스트 중</string>
     <string name="intro_3_description">플러그인 테스트</string>
     <string name="local_ip">기기 IP:</string>
-    <string name="beta_description">이 앱은 베타 버전입니다. 다른 언어로 번역하거나, 오류가 발견된다면 이곳(New issue 버튼)에 제보하여 주세요: \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="intro_1_description">PocketMine-MP 서버를 안드로이드에서 실행하세요! 자작 플러그인을 테스트하세요. 친구들과 함께 플레이하세요. 어떤 것에 제한 없이, 상상을 넓게 펼치세요.</string>

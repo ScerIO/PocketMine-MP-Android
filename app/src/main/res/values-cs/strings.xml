@@ -30,7 +30,6 @@
     <string name="intro_3_title">Test</string>
     <string name="intro_3_description">Otestuj pluginy</string>
     <string name="local_ip">Lokální IP:</string>
-    <string name="beta_description">Aplikace je v beta verzi. Jestli chceš pomoc s překládáním do dalších jazyku nebo jsi nešel/a chybu - prosím, nashlaš je tady (Nový problém): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="intro_1_description">Použij PocketMine-MP server na tvých Android zařízení! Koukej na vlastní pluginy. Hraj s tvými kamarády v okolí. Neomezujte se ničím a nechte svou fantazii volně běžet.</string>

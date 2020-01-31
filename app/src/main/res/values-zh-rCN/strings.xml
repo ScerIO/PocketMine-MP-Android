@@ -30,10 +30,10 @@
     <string name="intro_2_description">对官方最新内核不满意？ 你可以将PocketMine-MP.phar文件放在存储卡上的相应文件夹中，并使用第三方开发人员的内核！</string>
     <string name="intro_3_title">测试中</string>
     <string name="intro_3_description">测试你的插件</string>
-    <string name="local_ip">本地IP:</string>
-    <string name="beta_description">该应用程序处于测试阶段。 如果您想帮助翻译成另一种语言或发现错误 - 请在此处报告（新问题按钮）： \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
+    <string name="local_ip">本地IP:</string><![CDATA[
+   
 
-    <!-- TODO: Remove or change this placeholder text -->
+    ]]><!-- TODO: Remove or change this placeholder text -->
     <string name="intro_1_description">在您的Android设备上运行PocketMine-MP服务器！ 测试自己做的插件。 和你附近的朋友一起玩耍。 不要局限于任何事情，发挥你丰富的想象力。</string>
     <string name="server_load_statistics">服务器负载统计</string>
     <string name="download_error">下载错误</string>

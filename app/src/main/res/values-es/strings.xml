@@ -31,7 +31,6 @@
     <string name="intro_3_title">Pruebas</string>
     <string name="intro_3_description">Prueba tus plugins</string>
     <string name="local_ip">IP local:</string>
-    <string name="beta_description">Ésta aplicación está en fase beta. Si quieres ayudar con la traducción a otro lenguaje o encontraste un error en la misma - por favor, repórtalo aquí (en el botón New issue): \\n\\n https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="intro_1_description">¡Ejecuta un servidor de PocketMine-MP en tu dispositivo Android! Prueba tus propios plugins. Juega con tus amigos alrededor. No te limites a nada y deja volar tu imaginación.</string><string name="server_load_statistics">Estadísticas de carga del servidor</string>

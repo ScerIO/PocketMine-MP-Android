@@ -30,7 +30,6 @@
     <string name="intro_3_title">Тестируй</string>
     <string name="intro_3_description">Тестируй свои плагины</string>
     <string name="local_ip">Локальный IP:</string>
-    <string name="beta_description">Приложение находится в стадии бета-сборки. Если ты желаешь помочь с переводом на другой язык или нашел ошибку - прошу, сообщи о них сюда (кнопка New issue):    https://github.com/ScerIO/PocketMine-MP-Android/issues</string>
     <string name="intro_1_description">Запускай PocketMine-MP сервер прямо на своем Android устройстве! Проверяй самописные плагины. Играй с друзьями, находящимися вблизи. Не ограничивай себя ни в чем и дай волю фантазии.</string>
     <string name="server_load_statistics">Статистика загрузки сервера</string>
     <string name="download_error">Ошибка загрузки</string>
