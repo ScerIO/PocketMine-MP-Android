@@ -37,8 +37,14 @@ class Server(val files: Files) {
     }
 
     fun kill() {
+        if (!isRunning) {
+            ServerBus.Log.message("> Server is not running")
+            return
+        }
         try {
-            execCommand( "${files.killer} php")
+            process?.destroy()
+            process = null
+            ServerBus.Log.message("> Server killed\n")
         } catch (ignored: Exception) {}
     }
 
@@ -119,7 +125,7 @@ class Server(val files: Files) {
         }
     }
 
-    fun associateStats(stats: List<String>): HashMap<String, String> {
+    private fun associateStats(stats: List<String>): HashMap<String, String> {
         val result = HashMap<String, String>()
 
         fun removeNameFromStat(fullStat: String, name: String): String {
@@ -142,7 +148,6 @@ class Server(val files: Files) {
             val phar: File,
             val appDirectory: File,
             val php: File,
-            val killer: File,
             val settingsFile: File,
             val serverSetting: File
     ) {

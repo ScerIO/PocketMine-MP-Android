@@ -57,18 +57,15 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
                 phar = File(externalDirectory, "PocketMine-MP.phar"),
                 appDirectory = File(appDirectoryPath),
                 php = File(appDirectoryPath, "php"),
-                killer = File(appDirectoryPath, "killall"),
                 settingsFile = File(externalDirectory, "php.ini"),
                 serverSetting = File(externalDirectory, "server.properties")
         ))
 
         try {
-            for (path in arrayOf("php", "killall")) {
-                val file = File(Server.getInstance().files.appDirectory.toString() + "/" + path)
-                if (!file.exists()) {
-                    val targetFile = copyAsset(path)
-                    targetFile.setExecutable(true, true)
-                }
+            val file = File(Server.getInstance().files.appDirectory.toString() + "/php")
+            if (!file.exists()) {
+                val targetFile = copyAsset("php")
+                targetFile.setExecutable(true, true)
             }
         } catch (e: Exception) {
             e.printStackTrace()
