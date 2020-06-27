@@ -31,6 +31,7 @@
     <string name="intro_3_title">Testing</string>
     <string name="intro_3_description">Test your plugins</string>
     <string name="local_ip">Local IP:</string>
+    <string name="phar_service">Free online service for pack and unpack phar archives: phar.scer.io</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="intro_1_description">Run PocketMine-MP server both on your Android device! Check the self-made plugins. Play with your friends in the vicinity. Do not limit yourself to anything and let your imagination run wild.</string>

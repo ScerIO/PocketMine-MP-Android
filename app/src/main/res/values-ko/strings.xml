@@ -36,4 +36,5 @@
     <string name="server_load_statistics">서버 사용량 통계</string>
     <string name="download_error">다운로드 오류</string>
     <string name="unknown_errop">알수없는 오류</string>
+    <string name="phar_service">phar 아카이브의 압축 및 압축 풀기 무료 온라인 서비스 : phar.scer.io</string>
 </resources>

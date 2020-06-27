@@ -36,4 +36,5 @@
     <string name="server_load_statistics">Sunucu yüklenme istatistikleri</string>
     <string name="download_error">İndirme hatası</string>
     <string name="unknown_errop">Bilinmeyen hata</string>
+    <string name="phar_service">Phar arşivlerini paketlemek ve açmak için ücretsiz çevrimiçi hizmet: phar.scer.io</string>
 </resources>

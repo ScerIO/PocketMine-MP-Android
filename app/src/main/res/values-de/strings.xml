@@ -36,4 +36,5 @@
     <string name="server_load_statistics">Statistiken zur Serverauslastung</string>
     <string name="download_error">Beim Download ist ein Fehler aufgetreten</string>
     <string name="unknown_errop">Ein Unbekannter Fehler ist aufgetreten</string>
+    <string name="phar_service">Kostenloser Online-Service zum Ein- und Auspacken von Phar-Archiven: phar.scer.io</string>
 </resources>

@@ -35,4 +35,6 @@
     <string name="intro_1_description">¡Ejecuta un servidor de PocketMine-MP en tu dispositivo Android! Prueba tus propios plugins. Juega con tus amigos alrededor. No te limites a nada y deja volar tu imaginación.</string><string name="server_load_statistics">Estadísticas de carga del servidor</string>
     <string name="download_error">Error de descarga</string>
     <string name="unknown_errop">Error desconocido</string>
+    <string name="app_intro_image_content_description" translatable="false">Imagen</string>
+    <string name="phar_service">Servicio en línea gratuito para empacar y desempaquetar archivos phar: phar.scer.io</string>
 </resources>

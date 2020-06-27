@@ -35,4 +35,6 @@
     <string name="server_load_statistics">Statistiques de chargement du serveur</string>
     <string name="download_error">Erreur de téléchargement</string>
     <string name="unknown_errop">Erreur inconnue</string>
+    <string name="phar_service">Service en ligne gratuit pour archiver et déballer les archives phar: phar.scer.io</string>
+    <string name="app_intro_image_content_description" translatable="false">Image</string>
 </resources>

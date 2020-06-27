@@ -34,4 +34,5 @@
     <string name="download_error">Ошибка загрузки</string>
     <string name="app_intro_image_content_description" translatable="false">Изображение</string>
     <string name="unknown_errop">Неизвестная ошибка</string>
+    <string name="phar_service">Бесплатный онлайн-сервис для упаковки и распаковки phar-архивов: phar.scer.io</string>
 </resources>

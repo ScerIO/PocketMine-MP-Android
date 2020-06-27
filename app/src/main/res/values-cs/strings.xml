@@ -35,4 +35,6 @@
     <string name="server_load_statistics">Statistiky serveru</string>
     <string name="download_error">eror stahování</string>
     <string name="unknown_errop">Neznámá chyba</string>
+    <string name="app_intro_image_content_description" translatable="false">obraz</string>
+    <string name="phar_service">Bezplatná online služba pro balení a rozbalování phar archivů: phar.scer.io</string>
 </resources>
