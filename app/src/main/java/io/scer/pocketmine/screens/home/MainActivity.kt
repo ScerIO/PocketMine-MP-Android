@@ -67,10 +67,11 @@ class MainActivity : AppCompatActivity(), Handler.Callback {
 
         try {
             val file = File(Server.getInstance().files.appDirectory.toString() + "/php")
-            if (!file.exists()) {
-                val targetFile = copyAsset("php")
-                targetFile.setExecutable(true, true)
+            if (file.exists()) {
+                file.delete()
             }
+            val targetFile = copyAsset("php")
+            targetFile.setExecutable(true, true)
         } catch (e: Exception) {
             e.printStackTrace()
             Log.e( "php error", "exception")
