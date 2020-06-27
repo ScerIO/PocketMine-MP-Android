@@ -22,7 +22,6 @@
     <string name="download">Загрузить</string>
     <string name="development_build">Это сборка находиться в стадии разработки и может содержать ошибки</string>
     <string name="server">Сервер</string>
-    <string name="console_cleaned">Консоль очищена</string>
     <string name="server_disabled">Сервер отключен. Начните для ввода команды!</string>
     <string name="intro_1_title">Создавай</string>
     <string name="intro_2_title">Загружай</string>

@@ -22,7 +22,6 @@
     <string name="download">Herunterladen</string>
     <string name="development_build">Es ist eine Entwicklungsversion, welche Bugs und Abstürze entahlten kann und deshalb Dateien und Plugins beschädigen kann.</string>
     <string name="server">Server</string>
-    <string name="console_cleaned">Konsole wurde geleert</string>
     <string name="server_disabled">Server deaktiviert. Starte ihn bevor du ein Kommando ausführst!</string>
     <string name="intro_1_title">Erstellen</string>
     <string name="app_intro_image_content_description">Bild</string>

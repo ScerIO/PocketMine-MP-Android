@@ -1,9 +1,10 @@
 <resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <item name="android:forceDarkAllowed">true</item>
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorSecondary">@color/secondaryColor</item>
-        <item name="android:windowBackground">@color/background</item>
+<!--        <item name="android:windowBackground">@color/background</item>-->
     </style>
     <style name="AppTheme.NoActionBar" parent="AppTheme">
         <item name="windowActionBar">false</item>

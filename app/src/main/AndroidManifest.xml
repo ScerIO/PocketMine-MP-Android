@@ -3,6 +3,7 @@
     package="io.scer.pocketmine">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -29,7 +30,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".screens.home.MainActivity">
+        <activity android:name=".screens.home.MainActivity" android:configChanges="uiMode">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>

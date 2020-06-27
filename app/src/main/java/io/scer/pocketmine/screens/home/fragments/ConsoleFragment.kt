@@ -38,12 +38,12 @@ class ConsoleFragment : BaseFragment() {
         messageObserver = ServerBus.Log.listen.subscribe{
             if (activity == null) return@subscribe
 
-            activity!!.runOnUiThread {
+            requireActivity().runOnUiThread {
                 labelLog.text = it
                 Timer().schedule(100) {
                     if (activity == null) return@schedule
 
-                    activity!!.runOnUiThread delayed@ {
+                    requireActivity().runOnUiThread delayed@ {
                         if (scroll == null) return@delayed
 
                         scroll.fullScroll(ScrollView.FOCUS_DOWN)
@@ -63,7 +63,7 @@ class ConsoleFragment : BaseFragment() {
     private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe({
         if (activity == null) return@subscribe
 
-        activity!!.runOnUiThread {
+        requireActivity().runOnUiThread {
             toggleCommandLine(false)
         }
     }, ::handleError)
@@ -93,7 +93,6 @@ class ConsoleFragment : BaseFragment() {
             R.id.clear -> {
                 labelLog.text = ""
                 ServerBus.Log.clear()
-                Snackbar.make(view!!, R.string.console_cleaned, Snackbar.LENGTH_SHORT).show()
             }
         }
         return super.onOptionsItemSelected(item)

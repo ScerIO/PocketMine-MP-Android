@@ -21,9 +21,10 @@
     <string name="game_version">游戏版本</string>
     <string name="download">下载</string>
     <string name="development_build">它是开发构建，它可能有错误，崩溃，损坏您的数据或破坏您的插件</string>
-    <string name="server">服务器</string>
-    <string name="console_cleaned">控制台已清理</string>
-    <string name="server_disabled">服务器已关闭，请启动之后再输入命令</string>
+    <string name="server">服务器</string><![CDATA[
+   
+    ]]>
+    <string name="server_disabled">服务器已关闭，请启动之后再输入命令</string>
     <string name="intro_1_title">创建</string>
     <string name="app_intro_image_content_description" translatable="false">图片</string>
     <string name="intro_2_title">下载</string>

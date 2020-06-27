@@ -23,7 +23,6 @@
     <string name="download">Descargar</string>
     <string name="development_build">Ésta es una build en desarrollo y puede tener errores, crasheos y puede corromper tus datos o incluso hasta tus plugins</string>
     <string name="server">Servidor</string>
-    <string name="console_cleaned">La consola ha sido limpiada</string>
     <string name="server_disabled">Servidor apagado. ¡Enciéndelo antes de insertar un comando!</string>
     <string name="intro_1_title">Crear</string>
     <string name="intro_2_title">Descargar</string>

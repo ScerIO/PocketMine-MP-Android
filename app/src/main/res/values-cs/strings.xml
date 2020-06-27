@@ -22,7 +22,6 @@
     <string name="download">Stáhnout</string>
     <string name="development_build">Tahle aplikace je ve "vývoji" a může mýt problémy, spadnutí aplikace, Poškodit data, nebo zničit tvé pluginy</string>
     <string name="server">Server</string>
-    <string name="console_cleaned">Konzole byla smazána</string>
     <string name="server_disabled">Server je vypnut. Nastartuj server abys mohl/a psát komandy!</string>
     <string name="intro_1_title">Vytvorit</string>
     <string name="intro_2_title">Stáhnout</string>

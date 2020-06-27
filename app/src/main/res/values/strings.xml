@@ -23,7 +23,6 @@
     <string name="download">Download</string>
     <string name="development_build">It is development build and it may have bugs, crash, corrupt your data, or break your plugins</string>
     <string name="server">Server</string>
-    <string name="console_cleaned">Console was cleaned</string>
     <string name="server_disabled">Server disabled. Start before to enter command!</string>
     <string name="intro_1_title">Create</string>
     <string name="app_intro_image_content_description">Image</string>

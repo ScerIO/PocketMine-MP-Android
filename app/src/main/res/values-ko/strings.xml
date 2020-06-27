@@ -22,7 +22,6 @@
     <string name="download">다운로드</string>
     <string name="development_build">개발 빌드에서는 버그, 충돌, 플러그인이 손상될 수 있습니다</string>
     <string name="server">서버</string>
-    <string name="console_cleaned">콘솔 화면을 지웠습니다</string>
     <string name="server_disabled">서버가 비활성화되어있습니다, 명령어를 치기전에 서버를 활성화해주세요</string>
     <string name="intro_1_title">만들기</string>
     <string name="app_intro_image_content_description" translatable="false">이미지</string>

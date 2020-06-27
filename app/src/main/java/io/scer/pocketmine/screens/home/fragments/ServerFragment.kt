@@ -30,7 +30,7 @@ class ServerFragment : BaseFragment() {
 
         start.setOnClickListener {
             service = Intent(activity, ServerService::class.java)
-            ContextCompat.startForegroundService(context!!, service!!)
+            ContextCompat.startForegroundService(requireContext(), service!!)
         }
 
         stop.setOnClickListener {
@@ -40,7 +40,7 @@ class ServerFragment : BaseFragment() {
         dataSet = LineDataSet(ArrayList<Entry>(), null)
         dataSet.setDrawValues(false)
         dataSet.mode = LineDataSet.Mode.CUBIC_BEZIER
-        dataSet.color = ContextCompat.getColor(context!!, R.color.secondaryColor)
+        dataSet.color = ContextCompat.getColor(requireContext(), R.color.secondaryColor)
         dataSet.setDrawCircles(false)
         lineData = LineData(dataSet)
         chart_processor.description.isEnabled = false
@@ -51,7 +51,7 @@ class ServerFragment : BaseFragment() {
         chart_processor.setDrawBorders(true)
         chart_processor.legend.isEnabled = false
         val leftAxis = chart_processor.axisLeft
-        leftAxis.axisMinimum = 0f
+        leftAxis.axisMaximum = 100f
         leftAxis.valueFormatter = PercentFormatter()
         leftAxis.setDrawGridLines(false)
         val rightAxis = chart_processor.axisRight
@@ -64,7 +64,7 @@ class ServerFragment : BaseFragment() {
 
     @Suppress("DEPRECATION")
     private fun getIpAddress(): String {
-        val wifiManager = context!!.getSystemService(WIFI_SERVICE) as WifiManager
+        val wifiManager = requireContext().applicationContext.getSystemService(WIFI_SERVICE) as WifiManager
         val ip = wifiManager.connectionInfo.ipAddress
         return if (ip == 0) "127.0.0.1" else Formatter.formatIpAddress(ip)
     }
@@ -72,7 +72,7 @@ class ServerFragment : BaseFragment() {
     private val startObserver = ServerBus.listen(StartEvent::class.java).subscribe({
         if (activity == null) return@subscribe
 
-        activity!!.runOnUiThread {
+        requireActivity().runOnUiThread {
             toggleButtons(true)
         }
     }, ::handleError)
@@ -80,7 +80,7 @@ class ServerFragment : BaseFragment() {
     private val stopObserver = ServerBus.listen(StopEvent::class.java).subscribe({
         if (activity == null) return@subscribe
 
-        activity!!.runOnUiThread {
+        requireActivity().runOnUiThread {
             toggleButtons(false)
         }
         if (service != null) requireActivity().stopService(service)
@@ -90,13 +90,13 @@ class ServerFragment : BaseFragment() {
         if (activity == null) return@subscribe
 
         when (it.type) {
-            Errors.PHAR_NOT_EXIST -> Snackbar.make(view!!, R.string.phar_does_not_exist, Snackbar.LENGTH_LONG).show()
-            Errors.UNKNOWN -> Snackbar.make(view!!, "Error: $it.message", Snackbar.LENGTH_LONG).show()
+            Errors.PHAR_NOT_EXIST -> Snackbar.make(requireView(), R.string.phar_does_not_exist, Snackbar.LENGTH_LONG).show()
+            Errors.UNKNOWN -> Snackbar.make(requireView(), "Error: $it.message", Snackbar.LENGTH_LONG).show()
         }
-        activity!!.runOnUiThread {
+        requireActivity().runOnUiThread {
             toggleButtons(false)
         }
-        if (service != null) activity!!.stopService(service)
+        if (service != null) requireActivity().stopService(service)
     }, ::handleError)
 
     private lateinit var dataSet: LineDataSet
@@ -105,7 +105,7 @@ class ServerFragment : BaseFragment() {
     private val statUpdateObserver = ServerBus.listen(UpdateStatEvent::class.java).subscribe ({
         if (activity == null || !it.state.containsKey("Load")) return@subscribe
 
-        activity!!.runOnUiThread {
+        requireActivity().runOnUiThread {
             if (chart_processor == null) return@runOnUiThread
 
             val processor = it.state.getValue("Load").replace("%", "").toFloat()

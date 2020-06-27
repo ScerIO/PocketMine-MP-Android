@@ -22,7 +22,6 @@
     <string name="download">İndir</string>
     <string name="development_build">Geliştirilme aşamasındadır ve hatalara, çökmelere, verilerinizi ve eklentilerinizi bozmasına olabilir.</string>
     <string name="server">Sunucu</string>
-    <string name="console_cleaned">Konsol temizlendi</string>
     <string name="server_disabled">Sunucu devre dışı.  Komut girmeden önce başlatın!</string>
     <string name="intro_1_title">Oluştur</string>
     <string name="app_intro_image_content_description" translatable="false">Resim</string>

@@ -68,6 +68,8 @@ class Server(val files: Files) {
         if (!isInstalled) {
             ServerBus.publish(ErrorEvent(null, Errors.PHAR_NOT_EXIST))
         }
+        val binary = File(files.appDirectory.toString() + "/php")
+        binary.setExecutable(true, true)
         val builder = ProcessBuilder(
                 files.php.toString(), "-c",
                 files.settingsFile.toString(),
