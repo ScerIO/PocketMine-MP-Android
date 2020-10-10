@@ -38,7 +38,7 @@ class Server(val files: Files) {
 
     fun kill() {
         if (!isRunning) {
-            ServerBus.Log.message("> Server is not running")
+            ServerBus.Log.message("> Server is not running\n")
             return
         }
         try {
