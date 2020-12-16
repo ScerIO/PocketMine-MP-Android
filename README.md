@@ -3,6 +3,11 @@ PocketMine-MP server for Android
 
 This program can run PocketMine-MP server on android device using PHP binaries (Works only on abi `arm64`)
 
+__Since the version 3.0, the code has become private and the repository is no longer supported__
+<br/>For more information, join:
+- [Discord](https://discord.gg/zyyrjygnxS)
+- [VKontakte](https://vk.com/pocketmine_app)
+
 ## Download
 [![gp](https://play.google.com/intl/en_us/badges/images/badge_new.png)](https://play.google.com/store/apps/details?id=io.scer.pocketmine)
 
